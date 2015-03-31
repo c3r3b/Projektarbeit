@@ -14,6 +14,12 @@
 \contentsline {subsection}{\numberline {3.2.4}\IeC {\"U}berpr\IeC {\"u}fen von Anforderungen}{15}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Zuordnen von Anforderungen}{15}{subsection.3.2.5}
 \contentsline {chapter}{\numberline {4}Evaluierung}{17}{chapter.4}
-\contentsline {chapter}{\numberline {5}Zusammenfassung}{19}{chapter.5}
-\contentsline {chapter}{\nonumberline Literatur}{21}{appendix*.12}
+\contentsline {section}{\numberline {4.1}Implementierung und Testumgebungen}{17}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Testumgebung 1}{17}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Testumgebung 2}{18}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Vergleich zwischen Backtracking mit und ohne Forward-Checking}{18}{section.4.2}
+\contentsline {section}{\numberline {4.3}Vergleich der Variablenordnungsverfahren}{19}{section.4.3}
+\contentsline {section}{\numberline {4.4}Vergleich zwischen Min-Conflicts und Backtracking}{23}{section.4.4}
+\contentsline {chapter}{\numberline {5}Zusammenfassung}{27}{chapter.5}
+\contentsline {chapter}{Literatur}{29}{appendix*.19}
 \select@language {german}
