@@ -66,10 +66,10 @@ Die Bandbreite jedes Kommunikationsknoten ist ein Zehntel der Kapazität eines j
 Wie man in Abbildung \ref{fig:forwardChecking} sehen kann, benötigt man sehr viel weniger Einplanungsversuche, falls Forward-Checking (FC) zur Anwendung kommt. Wenn Forward-Checking benutzt wird, wird nur auf Kacheln einplant, die keine Randbedingung $b_i \in B$ verletzen. Vor allem die Randbedingung $b_{distance}$ verringert hierbei den Suchraum enorm. Ohne FC ist der Suchraum so groß wie  das komplette NoC. Die Maximalzahl an Einplanungen (bei 15 Tasks) betrug ohne FC 1.183.082, mit FC hingegen nur 56.385. So gab es beim Verfahren ohne FC bis zu 20 mal mehr Einplanungsversuche als mit der Verwendung von FC. Dies spiegelt in etwa das Verhältnis der Größe der Domänen in beiden Varianten wieder. %Bei der Verwendung von Backtracking ohne FC (BoFC) sind alle Kacheln in der Domäne $D_{BoFC}$ und bei der Verwendung von Backtracking mit FC (BmFC) sind nur die Kacheln  in der Domäne $D_{BmFC}$, die alle Nebenbedingungen $b_i \in B$ erfüllen, erlaubt.
 
 
-\begin{figure}[H]\centering
-  \includegraphics[width = 150mm]{bilder/forwardChecking.jpg}
-  \caption{Vergleich zwischen Backtracking mit Forward--Checking und ohne Forward--Checking }\label{fig:forwardChecking}
-\end{figure}
+%\begin{figure}[H]\centering
+%  \includegraphics[width = 150mm]{bilder/forwardChecking.jpg}
+%  \caption{Vergleich zwischen Backtracking mit Forward--Checking und ohne Forward--Checking }\label{fig:forwardChecking}
+%\end{figure}
 
 \section{Vergleich der Variablenordnungsverfahren}
 
@@ -77,16 +77,16 @@ In diesem Abschnitt werden die Variablenordnungsverfahren aus Kapitel \ref{varia
 \\
 Der Testfall 1 (Abschnitt \ref{Testumgebung1}) wurde in Abbildung \ref{fig:ordering2Links} und der Testfall 2 (Abschnitt \ref{Testumgebung2}) in Abbildung \ref{fig:ordering10Links} ausgewertet. Wie zu erwarten war, steigt der Lösungsaufwand mit der Anzahl an Tasks. Zum einen zeigt es sich, dass die schwer zu erfüllende $b_{routing}$-Bedingung aus Testfall 1 einen maßgeblichen Anteil an der Anzahl der Einplanungen auf die Kacheln besitzt. Es werden bis zu 67 mal mehr Einplanungen beim Testfall 1  als beim Testfall 2 getätigt. Zum anderen erkennt man, dass die verschiedenen Testumgebungen keinen Einfluss auf die Rangfolge der Ordnungsverfahren hat. In beiden Testumgebungen benötigt Minimal-Bandwidth-Ordering (MBO) die wenigsten Einbettungen. Mit einem eher kleinen Abstand folgt Minimal-Width-Ordering (MWO) auf Rang zwei. Sehr viel mehr Einbettungen benötigt MaxHops im Vergleich zu MBO und MWO. Deshalb ist MaxHops besonders für große Taskgraphen nicht empfehlenswert.
 
-\begin{figure}[H]\centering
-  \includegraphics[width = 150mm]{bilder/ordering3.jpg}
-  \caption{Vergleich zwischen den drei vorgestellten Variablenordnungsverfahren. Testumgebung 1 stammt aus Abschnitt \ref{Testumgebung1}.}\label{fig:ordering2Links}
-\end{figure}
+%\begin{figure}[H]\centering
+%  \includegraphics[width = 150mm]{bilder/ordering3.jpg}
+%  \caption{Vergleich zwischen den drei vorgestellten Variablenordnungsverfahren. Testumgebung 1 stammt aus Abschnitt \ref{Testumgebung1}.}\label{fig:ordering2Links}
+%\end{figure}
 
-\begin{figure}[H]\centering
-  \includegraphics[width = 150mm]{bilder/variablenordnung10nachrichtenProLink.jpg}
-  \caption{Vergleich zwischen den drei vorgestellten Variablenordnungsverfahren. Testumgebung 2 stammt aus Abschnitt \ref{Testumgebung2}.}% Die Variablenordnungen wurden in Testumgebung 2 (Abschnitt \ref{Testumgebung2}) ausgewertet. 
-  \label{fig:ordering10Links}
-\end{figure}
+%\begin{figure}[H]\centering
+%  \includegraphics[width = 150mm]{bilder/variablenordnung10nachrichtenProLink.jpg}
+%  \caption{Vergleich zwischen den drei vorgestellten Variablenordnungsverfahren. Testumgebung 2 stammt aus Abschnitt \ref{Testumgebung2}.}% Die Variablenordnungen wurden in Testumgebung 2 (Abschnitt \ref{Testumgebung2}) ausgewertet. 
+%  \label{fig:ordering10Links}
+%\end{figure}
 
 %Wie man in Abbildung \ref{fig:ordering} erkennt, benötigen MWO und MBO annähernd die gleiche Anzahl an Einbettungen. Das MaxHops Verfahren fällt gegenüber den anderen zwei vorgestellten Verfahren ab. Dies liegt daran, dass MaxHops nicht nach Anzahl der Abhängigkeiten (MWO und MBO) sortiert, sondern nach der Größe der maximalen HopLimits. So ist es bei MaxHops möglich, dass ein Task der zu Beginn eingeplant werden soll, auch mit Tasks am Ende der Einplanungsordnung in Verbindung steht. \\
 %\\
@@ -109,10 +109,10 @@ Obwohl MBO die wenigsten Einbettungen benötigt, ist er nicht empfehlenswert. MB
 \end{table}
 
 %die Tasks im Gegensatz zu MWO und MBO nicht zwangsläufig durch Kommunikationsknoten verbunden sind. So ist es möglich, dass mehrere Tasks den 
-\begin{figure}[H]\centering
-  \includegraphics[width = 150mm]{bilder/ZeitmessungVariablenordnung.jpg}
-  \caption{Zeitdauer für die Variablenordnungsverfahren}\label{fig:Zeit}
-\end{figure}
+%\begin{figure}[H]\centering
+%  \includegraphics[width = 150mm]{bilder/ZeitmessungVariablenordnung.jpg}
+%  \caption{Zeitdauer für die Variablenordnungsverfahren}\label{fig:Zeit}
+%\end{figure}
 
 
 
@@ -135,19 +135,19 @@ Der Verlauf der Einbettungsfunktion zeigt Folgendes: Bei einer geringen Anzahl a
 
 %Zuerst wird die Erfolgsquote der Min-Conflicts-Heuristik (Kapitel \refminConflicts) untersucht. Hierbei werden die Testfälle aus Abschnitt \ref{Tests} wieder verwendet. Der Algorithmus darf pro Testfall 40 Durchgänge durchlaufen, das heißt es können alle Tasks 40 mal neu und zufällig gesetzt werden. Pro Durchgang ist es 200 mal möglich einen konflikterzeugenden Task auszuwählen und die Konflikte zu lösen bzw. zu minimieren. Falls es dennoch zu keiner Lösung kommt, wird der Testfall als \textit{nicht gelöst} bewertet. In Abbildung \ref{fig:MinConflictErfolgsquote} ist zu erkennen, dass es mit der ansteigender Zahl an Tasks die Min-Conflicts-Heuristik seltener eine Lösung findet, obwohl eine Lösung vorhanden ist. Das Backtracking-Verfahren findet jedoch immer eine Lösung, falls eine vorhanden ist.
 
-\begin{figure}[H]\centering
-  \includegraphics[width = 150mm]{bilder/MinConflicts2Links.jpg}
-  \caption{Vergleich zwischen Backtracking mit Minimal-Width-Ordering (MWO) und Min-Conflicts. Testumgebung 1 stammt aus Abschnitt \ref{Testumgebung1}. \\
-  Die durchgezogenen Linien geben die Einbettungen auf den Kacheln an. \\
-  Die gestrichelte Linie gibt die Erfolgswahrscheinlichkeit der Einbettung an.}\label{fig:MinConflictTest1}
-\end{figure}
+%\begin{figure}[H]\centering
+%  \includegraphics[width = 150mm]{bilder/MinConflicts2Links.jpg}
+%  \caption{Vergleich zwischen Backtracking mit Minimal-Width-Ordering (MWO) und Min-Conflicts. Testumgebung 1 stammt aus Abschnitt \ref{Testumgebung1}. \\
+%  Die durchgezogenen Linien geben die Einbettungen auf den Kacheln an. \\
+%  Die gestrichelte Linie gibt die Erfolgswahrscheinlichkeit der Einbettung an.}\label{fig:MinConflictTest1}
+%\end{figure}
 \ \\
 Abbildung \ref{fig:MinConflictsTest2} stellt die Auswertung der Testumgebung 2 (Abschnitt \ref{Testumgebung2}) dar. Die Erfolgsquote ist hierbei höher als bei Abbildung \ref{fig:MinConflictsTest2}. Das liegt daran, dass es mehr Lösungen auf den Network-on-Chip (NoC) gibt. Der Min-Conflicts-Embedder schneidet aber wiederum viel schlechter als der Backtracking-Embedder ab. 
 %In Abbildung \ref{fig:VergleichMinConflictBacktracking} wird das Backtracking- mit dem Min-Conflicts-Verfahren verglichen. Hierbei werden nur erfolgreiche Einbettungsversuche gewertet. Im Backtracking-Verfahren wurde Forward-Checking verwendet. Zuvor wurden die Tasks mit Hilfe dem Variablenordnungsverfahern MWO geordnet. Wie auf der Abbildung zu erkennen ist, steigt die Anzahl der Einbettungsversuche bei Backtracking stärker als bei Min-Conflicts an. Dies sieht auf den ersten Blick positiv aus. Jedoch muss die viel geringere Erfolgsquote von Min-Conflicts berücksichtigt werden. So sollte bei der gewählten Testumgebung (Abschnitt \ref{Tests}) ab einer Anzahl von 10 Tasks der Min-Conflicts als CSP-Solver nicht mehr ausgewählt werden. Min-Conflicts eignet sich vor allem als Reparaturverfahren. Wenn schon eine Lösung gefunden wurde, aber eine von einem Task benutzte Kachel defekt wird. Hier kann Min-Conflicts eine Lösung mit wenigen Einbettungsversuchen finden.
 
-\begin{figure}[H]\centering
-  \includegraphics[width = 150mm]{bilder/MinConflicts10Links.jpg}
-  \caption{Vergleich zwischen Backtracking mit Minimal-Width-Ordering (MWO) und Min-Conflicts. Testumgebung 2 stammt aus Abschnitt \ref{Testumgebung2}. Die durchgezogenen Linien geben die Einbettungen auf den Kacheln an. Die gestrichelte Linie gibt die Erfolgswahrscheinlichkeit der Einbettung an.}\label{fig:MinConflictsTest2}
-\end{figure}
+%\begin{figure}[H]\centering
+%  \includegraphics[width = 150mm]{bilder/MinConflicts10Links.jpg}
+%  \caption{Vergleich zwischen Backtracking mit Minimal-Width-Ordering (MWO) und Min-Conflicts. Testumgebung 2 stammt aus Abschnitt \ref{Testumgebung2}. Die durchgezogenen Linien geben die Einbettungen auf den Kacheln an. Die gestrichelte Linie gibt die Erfolgswahrscheinlichkeit der Einbettung an.}\label{fig:MinConflictsTest2}
+%\end{figure}
 \ \\
 Die Evaluierung hat ergeben, dass das Min-Conflicts-Verfahren insbesondere für schwer zu lösende Probleme ungeeignet ist. Die Verwendung des Min-Conflicts-Verfahren für die Einbettungen einer Anwendung in einem Network-on-Chip (NoC) ist nicht zu empfehlen, falls es sich um ein schwer zu erfüllendes Problem handelt. Min-Conflicts eignet sich jedoch als Reparaturverfahren \cite{cspsolvingRepairMethod}, wenn bereits eine Lösung gefunden wurde, aber eine von einem Task benutzte Kachel defekt wird. In diesem Fall kann Min-Conflicts eine Lösung mit wenigen Einbettungsversuchen finden.

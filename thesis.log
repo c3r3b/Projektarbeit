@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.25)  31 MAR 2015 16:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.25)  31 MAR 2015 16:19
 entering extended mode
 **thesis.tex
 (C:\Users\Daniel\Dropbox\Projektarbeit\Projektarbeit\thesis.tex
@@ -1161,7 +1161,7 @@ ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-<bilder/codesign.pdf, id=70, 781.92125pt x 385.44pt>
+<bilder/codesign.pdf, id=94, 781.92125pt x 385.44pt>
 File: bilder/codesign.pdf Graphic file (type pdf)
  <use bilder/codesign.pdf>
 Package pdftex.def Info: bilder/codesign.pdf used on input line 53.
@@ -1202,7 +1202,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
 
-<bilder/FAU_Logo.pdf, id=71, 597.51233pt x 170.7178pt>
+<bilder/FAU_Logo.pdf, id=95, 597.51233pt x 170.7178pt>
 File: bilder/FAU_Logo.pdf Graphic file (type pdf)
 
 <use bilder/FAU_Logo.pdf>
@@ -1315,20 +1315,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 LaTeX Warning: Reference `Randbedingungen' on page 3 undefined on input line 19
 .
 
-<bilder/NoC.jpg, id=147, 376.40625pt x 419.31656pt>
+<bilder/NoC.jpg, id=177, 376.40625pt x 419.31656pt>
 File: bilder/NoC.jpg Graphic file (type jpg)
  <use bilder/NoC.jpg>
 Package pdftex.def Info: bilder/NoC.jpg used on input line 27.
 (pdftex.def)             Requested size: 199.16928pt x 221.8784pt.
 
-[3] <bilder/Links.jpg, id=161, 145.29282pt x 146.04562pt>
+[3] <bilder/Links.jpg, id=191, 145.29282pt x 146.04562pt>
 File: bilder/Links.jpg Graphic file (type jpg)
 
 <use bilder/Links.jpg>
 Package pdftex.def Info: bilder/Links.jpg used on input line 32.
 (pdftex.def)             Requested size: 85.35826pt x 85.80067pt.
 
-<bilder/taskgraph2.jpg, id=163, 391.4625pt x 262.73157pt>
+<bilder/taskgraph2.jpg, id=193, 391.4625pt x 262.73157pt>
 File: bilder/taskgraph2.jpg Graphic file (type jpg)
 
 <use bilder/taskgraph2.jpg>
@@ -1376,7 +1376,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--1
 
 ]
 Kapitel 3.
-<bilder/minAkti.jpg, id=197, 845.1575pt x 720.6925pt>
+<bilder/minAkti.jpg, id=227, 845.1575pt x 720.6925pt>
 File: bilder/minAkti.jpg Graphic file (type jpg)
  <use bilder/minAkti.jpg>
 Package pdftex.def Info: bilder/minAkti.jpg used on input line 10.
@@ -1412,7 +1412,7 @@ Overfull \hbox (33.0416pt too wide) in paragraph at lines 38--38
 [][][][]\OT1/ptm/m/n/12 Umformulierung  
  []
 
-[11] <bilder/task-unit.jpg, id=214, 860.46469pt x 871.75688pt>
+[11] <bilder/task-unit.jpg, id=244, 860.46469pt x 871.75688pt>
 File: bilder/task-unit.jpg Graphic file (type jpg)
 
 <use bilder/task-unit.jpg>
@@ -1423,7 +1423,7 @@ Overfull \hbox (2.03227pt too wide) in paragraph at lines 70--71
  [][] 
  []
 
-[12] <bilder/communication-link.jpg, id=220, 870.25125pt x 840.89156pt>
+[12] <bilder/communication-link.jpg, id=250, 870.25125pt x 840.89156pt>
 File: bilder/communication-link.jpg Graphic file (type jpg)
 
 <use bilder/communication-link.jpg>
@@ -1467,10 +1467,162 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--1
 
 ]
 Kapitel 4.
-) (C:\Users\Daniel\Dropbox\Projektarbeit\Projektarbeit\zusammenfassung.tex
-[17] [18
 
-]
+LaTeX Warning: Reference `Backtracking' on page 17 undefined on input line 5.
+
+
+LaTeX Warning: Reference `minConflicts' on page 17 undefined on input line 5.
+
+
+LaTeX Warning: Reference `MWO' on page 17 undefined on input line 5.
+
+
+LaTeX Warning: Reference `MBO' on page 17 undefined on input line 5.
+
+
+LaTeX Warning: Reference `MaxHops' on page 17 undefined on input line 5.
+
+
+LaTeX Warning: Citation `tgff' on page 17 undefined on input line 5.
+
+
+Overfull \hbox (4.98085pt too wide) in paragraph at lines 5--7
+\OT1/ptm/m/n/12 Die Im-ple-men-tie-rung der CSP-Solver (Backtracking-Algorithmu
+s [[]] und Min-Conflicts-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--40
+
+ []
+
+[17]
+
+LaTeX Warning: Reference `fig:forwardChecking' on page 18 undefined on input li
+ne 66.
+
+
+LaTeX Warning: Reference `variableOrdering' on page 18 undefined on input line 
+76.
+
+
+LaTeX Warning: Reference `fig:ordering2Links' on page 18 undefined on input lin
+e 78.
+
+
+LaTeX Warning: Reference `fig:ordering10Links' on page 18 undefined on input li
+ne 78.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+
+ []
+
+[18]
+
+LaTeX Warning: Reference `fig:Zeit' on page 19 undefined on input line 94.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--109
+
+ []
+
+
+LaTeX Warning: Reference `minConflicts' on page 19 undefined on input line 122.
+
+
+
+LaTeX Warning: Reference `Backtracking' on page 19 undefined on input line 122.
+
+
+
+LaTeX Warning: Reference `ForwardChecking' on page 19 undefined on input line 1
+22.
+
+
+LaTeX Warning: Reference `MWO' on page 19 undefined on input line 122.
+
+
+LaTeX Warning: Reference `fig:MinConflictTest1' on page 19 undefined on input l
+ine 122.
+
+
+LaTeX Warning: Reference `fig:MinConflictsTest2' on page 19 undefined on input 
+line 122.
+
+
+LaTeX Warning: Reference `fig:MinConflictsTest2' on page 19 undefined on input 
+line 126.
+
+
+LaTeX Warning: Reference `fig:MinConflictTest1' on page 19 undefined on input l
+ine 130.
+
+LaTeX Font Info:    Font shape `OMS/pzc/m/n' in size <7.4> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `OMS/pzc/m/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+
+Overfull \hbox (2.88173pt too wide) in paragraph at lines 122--133
+[]\OT1/ptm/m/n/12 ) und das Va-ria-blen-ord-nungs-ver-fah-ren Minimal-Width-Ord
+ering (MWO, Ab-schnitt []).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--133
+
+ []
+
+[19]
+
+LaTeX Warning: Reference `fig:MinConflictsTest2' on page 20 undefined on input 
+line 145.
+
+
+LaTeX Warning: Reference `fig:MinConflictsTest2' on page 20 undefined on input 
+line 145.
+
+) (C:\Users\Daniel\Dropbox\Projektarbeit\Projektarbeit\zusammenfassung.tex
+[20]
 Kapitel 5.
 
 Overfull \hbox (1.84856pt too wide) in paragraph at lines 3--12
@@ -1484,11 +1636,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--12
  []
 
 
-LaTeX Warning: Citation `artificialIntelligence' on page 19 undefined on input 
+LaTeX Warning: Citation `artificialIntelligence' on page 21 undefined on input 
 line 13.
 
 
-LaTeX Warning: Citation `foundationCSP' on page 19 undefined on input line 13.
+LaTeX Warning: Citation `foundationCSP' on page 21 undefined on input line 13.
 
 
 Overfull \hbox (17.88162pt too wide) in paragraph at lines 13--14
@@ -1497,7 +1649,7 @@ se dy-na-misch zu be-stim-men. Minimum-
  []
 
 
-LaTeX Warning: Citation `Symmetrie' on page 19 undefined on input line 15.
+LaTeX Warning: Citation `Symmetrie' on page 21 undefined on input line 15.
 
 
 Overfull \hbox (17.37796pt too wide) in paragraph at lines 15--16
@@ -1505,10 +1657,12 @@ Overfull \hbox (17.37796pt too wide) in paragraph at lines 15--16
 -wie-sen. Das Backtracking-Verfahren,
  []
 
-) (C:\Users\Daniel\Dropbox\Projektarbeit\Projektarbeit\thesis.bbl [19] [20
+) (C:\Users\Daniel\Dropbox\Projektarbeit\Projektarbeit\thesis.bbl [21
+
+] [22
 
 ])
-[21] [22
+[23] [24
 
 ] (C:\Users\Daniel\Dropbox\Projektarbeit\Projektarbeit\erklaerung.tex)
 
@@ -1518,7 +1672,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[23
+[25
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
@@ -1527,7 +1681,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E8E2710AD08E2954DBC7B9C67CC92A4F;1180.
+(rerunfilecheck)             Checksum: 9F92511F7A387DF7DF87ABC601583C82;1694.
 
 
 LaTeX Warning: There were undefined references.
@@ -1535,13 +1689,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 81.
  ) 
 Here is how much of TeX's memory you used:
- 21197 strings out of 493921
- 389586 string characters out of 3144873
- 499741 words of memory out of 3000000
- 23986 multiletter control sequences out of 15000+200000
- 41391 words of font info for 97 fonts, out of 3000000 for 9000
+ 21261 strings out of 493921
+ 390451 string characters out of 3144873
+ 501098 words of memory out of 3000000
+ 24037 multiletter control sequences out of 15000+200000
+ 50340 words of font info for 116 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 73i,10n,100p,1615b,867s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,10n,100p,1704b,867s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
@@ -1552,9 +1706,9 @@ x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on thesis.pdf (29 pages, 555602 bytes).
+Output written on thesis.pdf (31 pages, 574405 bytes).
 PDF statistics:
- 318 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 229 words of extra memory for PDF output out of 10000 (max. 10000000)
 
