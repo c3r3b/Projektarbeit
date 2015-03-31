@@ -1,12 +1,6 @@
 \newcommand{\noopsort}[1]{}
 \begin{thebibliography}{MRBO02}
 
-\bibitem[DRW98]{tgff}
-R.P. Dick, D.L. Rhodes, and W.~Wolf.
-\newblock Tgff.
-\newblock In {\em task graphs for free. In Hardware/Software Codesign}, pages
-  97--101. CODES/CASHE ’98, 1998.
-
 \bibitem[Fra11]{NOC}
 Thomas Frank.
 \newblock Network on chip.
@@ -22,6 +16,11 @@ G.~Görz, C.-R. Rollinger, and J.Schneeberger.
 Hans~Robert Hansen and Gustav Neumann.
 \newblock Wirtschaftsinformatik 1.
 \newblock In {\em Grundlagen und Anwendungen}. UTB GmbH, 2011.
+
+\bibitem[inv12]{invadeSIM}
+{invadeSim} {Programmiersprache}.
+\newblock
+  \url{http://invasic.informatik.uni-erlangen.de/en/tp_c2.php#invadeSIM}, 2012.
 
 \bibitem[Jä14]{jaeger}
 Daniel Jäger.
@@ -68,7 +67,7 @@ Andreas Weichslgartner, Stefan Wildermann, and Jürgen Teich.
 \newblock In {\em In Proceedings of NOCS}, pages 201--208. ACM, New York, NY,
   USA, 2011.
 
-\bibitem[X1014]{X10}
+\bibitem[x1014]{x10}
 {X10} {Programmiersprache}.
 \newblock \url{http://x10-lang.org/}, 2014.
 

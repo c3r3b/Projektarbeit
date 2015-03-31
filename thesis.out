@@ -12,11 +12,8 @@
 \BOOKMARK [2][-]{subsection.3.2.4}{\334berpr\374fen von Anforderungen}{section.3.2}% 12
 \BOOKMARK [2][-]{subsection.3.2.5}{Zuordnen von Anforderungen}{section.3.2}% 13
 \BOOKMARK [0][-]{chapter.4}{Evaluierung}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Implementierung und Testumgebungen}{chapter.4}% 15
-\BOOKMARK [2][-]{subsection.4.1.1}{Testumgebung 1}{section.4.1}% 16
-\BOOKMARK [2][-]{subsection.4.1.2}{Testumgebung 2}{section.4.1}% 17
-\BOOKMARK [1][-]{section.4.2}{Vergleich zwischen Backtracking mit und ohne Forward-Checking}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.3}{Vergleich der Variablenordnungsverfahren}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.4}{Vergleich zwischen Min-Conflicts und Backtracking}{chapter.4}% 20
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung}{}% 21
-\BOOKMARK [0][-]{appendix*.12}{Literatur}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Implementierung}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.2}{Testumgebung}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.3}{Auswertung}{chapter.4}% 17
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung}{}% 18
+\BOOKMARK [0][-]{appendix*.13}{Literatur}{}% 19
