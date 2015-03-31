@@ -35,9 +35,9 @@ entzieht dem Task die Unit. Alle Objekte, die sich in der Liste befinden, rufen 
 Um von der abstrakten Klasse TaskConstraints zu erben, müssen diese abstrakten Methoden implementiert werden:\\
 \begin{itemize}
 \item i\textit{sFeasible}\\
-überprüft, ob bei Einbetten des Tasks zur Unit u die durch das Objekt repräsentierte Anforderungen erfüllt werden würde. Hierzu wird die Methode check mit der Objektvariable der zugehörigen Instanz der Klasse UnitAttribute aufgerufen. \todo{Umformulierung}
+überprüft, ob die Anforderung erfüllt wäre, wenn der Task auf der Unit eingebettet ist. Hierzu wird die Methode \textit{check} mit der Objektvariable der zugehörigen Instanz der Klasse UnitAttribute aufgerufen.
 \item \textit{sSatisfied}\\
-überprüft, ob der eingebettete Task, die durch das Objekt repräsentierte Anforderung, erfüllt. Dazu wird die Methode check der zugerhöirigen UnitAttribute-Klasse mit dem Übergabewert null aufgerufen. 
+überprüft, ob der eingebettete Task die Anforderung erfüllt. Dazu wird die Methode \textit{check} der zugerhöirigen UnitAttribute-Klasse mit dem Übergabewert null aufgerufen. 
 \item \textit{map} \\
 ruft von der zugehörigen UnitAttribute Unterklasse die Methode update auf. Der Parameterwert ist die eigene Objektvariable
 \item \textit{}unmap\\

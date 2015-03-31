@@ -106,7 +106,8 @@ Das Ziel des Algorithmus ist es, für jeden Task eine Kachel zu finden, so dass 
 
 \section{Constraint--Satisfaction--Problem (CSP)}
 
-Das Problem der Taskeinbettung lässt sich als Constraint-Satisfaction-Problem (CSP) formulieren. Ein CSP wird mit dem Tripel $(V, D, B)$ (Definition \ref{Def:CSP})  beschrieben. Ziel des Constraint-Satisfaction-Problems ist es, eine global konsistente Wertebelegung für alle Constraint-Variablen zu finden. Das bedeutet, es müssen alle Bedingungen erfüllt sein. Eine Bedingung ist genau dann erfüllt (Definition \ref{Def:CSPErfuellung}), wenn die Wertezuweisungen den Anforderungen der Bedingung entspricht \cite{handbuchkuenstlicheIntelligenz}. Die Bedingungen lassen sich wie in \cite{jaeger} \todo{quelle} umformulieren. 
+Das Problem der Taskeinbettung lässt sich als Constraint-Satisfaction-Problem (CSP) formulieren. Ein CSP wird mit dem Tripel $(V, D, B)$ (Definition \ref{Def:CSP})  beschrieben. Ziel des Constraint-Satisfaction-Problems ist es, eine global konsistente Wertebelegung für alle Constraint-Variablen zu finden. Das bedeutet, es müssen alle Bedingungen erfüllt sein. Eine Bedingung ist genau dann erfüllt, wenn die Wertezuweisungen den Anforderungen der Bedingung entspricht \cite{handbuchkuenstlicheIntelligenz}. Die Bedingungen lassen sich wie in \cite{jaeger} \todo{quelle} umformulieren. \\
+\\
 
 %\subsection{Begriffserklärung}
 %Das Problem der Taskeinbettung lässt sich als Constraint-Satisfaction-Problem (CSP) formulieren. Ein CSP wird mit dem Tripel $(V, D, B)$ (Definition \ref{Def:CSP})  beschrieben. \\%(vgl. $http://www.inf.uos.de/woru/pub/diplom/html/node63.html$):
@@ -114,13 +115,13 @@ Das Problem der Taskeinbettung lässt sich als Constraint-Satisfaction-Problem (
 %
 %%\fbox{\parbox{\linewidth}{
 %
-%\begin{def1}[Constraint-Satisfaction-Problem \cite{artificialIntelligence}] \label{Def:CSP}
-%\begin{itemize}
-%\item V = \{$V_1$, $V_2$, \ldots , $V_n$\} ist eine endliche Menge von Variablen.
-%\item D = \{$D_1$, $D_2$, \ldots , $D_n$\} sind die Wertebereiche von V mit den Werten $d_i \in D_i$.
-%\item B = \{$B_1$, $B_2$, \ldots , $B_m$\} ist die Menge der Bedingungen, wobei jedes Randbedingung $B_j(V_j)$ eine Teilmenge $V_j = \{V_{j_1},\ldots,V_{j_m}\} \subseteq V$ der Variablen zueinander in Verbindung setzt und deren gültige Wertekombinationen auf eine Teilmenge von $D_{j_1} \times \cdots \times D_{j_m}$ beschränkt.
-%\end{itemize}
-%\end{def1}
+\begin{def1}[Constraint-Satisfaction-Problem \cite{artificialIntelligence}] \label{Def:CSP}
+\begin{itemize}
+\item V = \{$V_1$, $V_2$, \ldots , $V_n$\} ist eine endliche Menge von Variablen.
+\item D = \{$D_1$, $D_2$, \ldots , $D_n$\} sind die Wertebereiche von V mit den Werten $d_i \in D_i$.
+\item B = \{$B_1$, $B_2$, \ldots , $B_m$\} ist die Menge der Bedingungen, wobei jedes Randbedingung $B_j(V_j)$ eine Teilmenge $V_j = \{V_{j_1},\ldots,V_{j_m}\} \subseteq V$ der Variablen zueinander in Verbindung setzt und deren gültige Wertekombinationen auf eine Teilmenge von $D_{j_1} \times \cdots \times D_{j_m}$ beschränkt.
+\end{itemize}
+\end{def1}
 %\ \\
 %Ziel des Constraint-Satisfaction-Problems ist es, eine global konsistente Wertebelegung für alle Constraint-Variablen zu finden. Das bedeutet, es müssen alle Bedingungen erfüllt sein. Eine Bedingung ist genau dann erfüllt (Definition \ref{Def:CSPErfuellung}), wenn die Wertezuweisungen den Anforderungen der Bedingung entspricht \cite{handbuchkuenstlicheIntelligenz}:
 %\\ \\
