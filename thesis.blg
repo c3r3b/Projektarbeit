@@ -1,6 +1,49 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+This is BibTeX, Version 0.99d (TeX Live 2012/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
 The style file: alpha.bst
 Database file #1: literature.bib
 Warning--to sort, need author or key in X10
 Warning--empty publisher in NOC
+You've used 8 entries,
+            2543 wiz_defined-function locations,
+            617 strings with 5942 characters,
+and the built_in function-call counts, 3573 in all, are:
+= -- 374
+> -- 142
+< -- 7
++ -- 49
+- -- 49
+* -- 235
+:= -- 548
+add.period$ -- 28
+call.type$ -- 8
+change.case$ -- 49
+chr.to.int$ -- 8
+cite$ -- 11
+duplicate$ -- 166
+empty$ -- 280
+format.name$ -- 58
+if$ -- 780
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 7
+newline$ -- 43
+num.names$ -- 21
+pop$ -- 66
+preamble$ -- 2
+purify$ -- 57
+quote$ -- 0
+skip$ -- 130
+stack$ -- 0
+substring$ -- 185
+swap$ -- 45
+text.length$ -- 7
+text.prefix$ -- 2
+top$ -- 0
+type$ -- 60
+warning$ -- 2
+while$ -- 31
+width$ -- 10
+write$ -- 112
 (There were 2 warnings)
