@@ -1,0 +1,81 @@
+\input{formatThesisHSCD}
+
+%
+% if printVersion == true  =no hyperlinks are generated
+%                 == false => colored hyperlinks are generated
+%
+\setboolean{printVersion}{false}
+
+%
+% if englishDocument == true  => BABEL english and english dates are used
+%                    == false => BABEL german and german dates are used
+%
+\setboolean{englishDocument}{false}
+
+\newcommand{\studname}{Daniel Jäger}
+
+\ifthenelse{\boolean{printVersion}}{}{\usepackage[colorlinks=true]{hyperref}}
+\usepackage{cite}
+\usepackage[inline]{fixme}
+\usepackage{todonotes}
+\usepackage{thmbox}
+\usepackage[noend]{algpseudocode}
+\usepackage[plain,Algorithmus]{algorithm}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{algpseudocode}
+\newtheorem{def1}{Definition}
+\usepackage{comment}
+%\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\raggedbottom
+\begin{document}
+\ifthenelse{\boolean{englishDocument}}
+{ \selectlanguage{english}
+}
+{ \selectlanguage{german}
+}
+
+\frontmatter
+
+%
+% Typ bitte auswählen:
+%  - Diplomarbeit
+%  - Studienarbeit
+%  - Projektarbeit
+%  - Master's Thesis
+%  - Bachelor's Thesis
+%
+%
+%6
+\codesigntitle{Projektarbeit:}{Simulation der Einbettung von Anwendungen mit Bindungs- und
+Routinganforderungen in Mehrprozessorsystemen}{\studname}{21448104}{Prof. Dr.-Ing. Jürgen Teich \\ Dr.-Ing. Stefan Wildermann}
+
+\tableofcontents
+\input{aufgabenstellung}
+
+
+
+
+
+
+\mainmatter
+%\input{demoFile_einleitung}
+\input{motivation}
+%\input{demoFile_einleitung}
+\input{problemspezifikation}
+\input{model}
+\input{evaluierung}
+\input{zusammenfassung}
+
+\appendix
+\ifthenelse{\boolean{englishDocument}}{}{ \renewcommand{\bibname}{Literatur} }
+\bibliographystyle{alpha}
+\bibliography{literature}
+%\input{qutellcode}
+\cleardoublepage
+\input{erklaerung}
+
+
+
+\end{document}

@@ -1,0 +1,19 @@
+\addchap*{Aufgabenstellung zur Bachelorarbeit}
+Ziel dieser Arbeit ist es, einen Mechanismus für die \textit{invade}-Phase von Programmen mit strikten Ressourcenanforderungen zu entwerfen
+und zu untersuchen. Ausgangspunkt ist ein heterogenes Mehrprozessorsystem,
+dessen Prozessoren durch ein Network-on-Chip (NOC) \cite{mappingNocArchitectures} miteinander verbunden
+sind. Außerdem sind periodisch ausgeführte Programme gegeben, die durch
+Task-Graphen repräsentiert werden. Hierbei hat jeder Task Bindungsanforderungen bezüglich der Ressourcentypen, auf die er gebunden werden kann. Die
+Datenabhängigkeiten zwischen Tasks haben Routinganforderungen, z. B. bezüglich
+der maximalen Anzahl an Sprüngen (engl. \textit{hops}) durch das NoC oder der
+Bandbreite. \\ \\
+Das Problem der Selbsteinbettung lässt sich daher als Constraint-Satisfaction-Problem (CSP) \cite{foundationCSP} \cite{tutorialCSP} formulieren. Es gibt hier verschiedene Algorithmen, die
+eingesetzt und teilweise kombiniert werden können, um systematisch (z. B. Backtracking-
+Algorithmus, Forward-Checking-Algorithmus \cite{foundationCSP}) oder heuristisch (z. B.
+Min-Conflicts-Algorithmus \cite{cspsolvingRepairMethod} nach einer Lösung zu suchen. Diese Algorithmen
+beeinflussen also, ob das Verfahren überhaupt erkennt, wenn keine gültige
+Lösung existiert, oder im anderen Fall, ob eine gültige Lösung gefunden wird
+und wie lange der Suchlauf dann dauert. \\ \\
+In dieser Arbeit sollen daher verschiedene Algorithmen vorgestellt, an das Problem
+der Selbsteinbettung angepasst und dann bezüglich Erfolgsquote der Einbettung
+und Einbettungszeit ausgewertet werden.

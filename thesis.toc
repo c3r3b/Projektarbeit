@@ -1,0 +1,17 @@
+\select@language {english}
+\select@language {german}
+\contentsline {chapter}{\nonumberline Aufgabenstellung zur Projektarbeit}{v}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Motivation}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Problemspezifikation}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Selbsteinbettung in Mehrprozessorsysteme}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Constraint--Satisfaction--Problem (CSP)}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Min-Conflicts-Embedder}{6}{section.2.3}
+\contentsline {chapter}{\numberline {3}Model zur L\IeC {\"o}sung des CSP-Problems}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Implementierung des Min-Conflicts-Embedder}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Klassendiagramm zum L\IeC {\"o}sen der Bindungs- und Routinganforderungen}{10}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Bindungsanforderungen}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Routinganforderungen}{13}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Evaluierung}{15}{chapter.4}
+\contentsline {chapter}{\numberline {5}Zusammenfassung}{17}{chapter.5}
+\contentsline {chapter}{\nonumberline Literatur}{19}{appendix*.12}
+\select@language {german}

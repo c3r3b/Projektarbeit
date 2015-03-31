@@ -1,0 +1,52 @@
+\newcommand{\noopsort}[1]{}
+\begin{thebibliography}{WWT11}
+
+\bibitem[Fra11]{NOC}
+Thomas Frank.
+\newblock Network on chip.
+\newblock In {\em Architekturen, Herausforderungen, Lösungen}. Dresden, 2011.
+
+\bibitem[GRJ00]{handbuchkuenstlicheIntelligenz}
+G.~Görz, C.-R. Rollinger, and J.Schneeberger.
+\newblock {\em Handbuch der Künstlichen Intelligenz}, chapter Constraints,
+  pages 267--285.
+\newblock Oldenbourg Verlag, München, 3. edition, 2000.
+
+\bibitem[HN11]{Mehrprozessorsysteme}
+Hans~Robert Hansen and Gustav Neumann.
+\newblock Wirtschaftsinformatik 1.
+\newblock In {\em Grundlagen und Anwendungen}. UTB GmbH, 2011.
+
+\bibitem[Jä14]{jaeger}
+Daniel Jäger.
+\newblock {\em Selbsteinbettung von Anwendungen mit Bindungs- und
+  Routinganforderungen in Mehrprozessorsystemen}.
+\newblock Bachelorarbeit, Department of Computer Science 12, University of
+  Erlangen-Nuremberg, February 2014.
+
+\bibitem[MJPL90]{cspsolvingRepairMethod}
+Steven Minton, Mark~D. Johnston, Andrew~B. Philips, and Philip Laird.
+\newblock Solving large-scale constraint satisfaction and scheduling problems
+  using a heuristic repair method.
+\newblock In {\em Proceedings of the eighth National conference on Articial
+  intelligence}, pages 17--24. AAAI Press, University of Leeds, 1990.
+
+\bibitem[RHT12]{cf:MPSoCs}
+S.~Roloff, F.~Hannig, and J.~Teich.
+\newblock Approximate time functional simulation of resource-aware programming
+  concepts for heterogeneous mpsocs.
+\newblock In {\em Design Automation Conference (ASP-DAC)}, pages 187 -- 192,
+  New York, NY, USA, January 2012. 17th Asia and South Pacific.
+
+\bibitem[WWT11]{mappingNocArchitectures}
+Andreas Weichslgartner, Stefan Wildermann, and Jürgen Teich.
+\newblock Dynamic decentralized mapping of tree-structured applications on noc
+  architectures.
+\newblock In {\em In Proceedings of NOCS}, pages 201--208. ACM, New York, NY,
+  USA, 2011.
+
+\bibitem[X1014]{X10}
+{X10} {Programmiersprache}.
+\newblock \url{http://x10-lang.org/}, 2014.
+
+\end{thebibliography}

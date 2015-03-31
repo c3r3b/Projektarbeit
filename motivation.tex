@@ -1,0 +1,29 @@
+\chapter{Motivation}\label{motivation}
+%\section {motivation}
+Zukünftige Mehrprozessorsysteme bestehen aus einer Vielzahl heterogener
+Ressourcen [1], in denen die Kommunikation zwischen Ressourcen
+durch Network-on-Chips (NoCs) ermöglicht wird (siehe z. B. [2]). Diese Technologie
+unterstützt Anwendungsszenarien, in denen eine sehr große Zahl an Programmen
+dynamisch starten und terminieren. Allerdings führt der Einsatz von
+immer mehr gemeinsam genutzten, heterogenen Hardwareressourcen dazu, dass
+die Vorhersagbarkeit nichtfunktionaler Eigenschaften der Ausführung eines Programms
+erschwert wird. Dies betrifft z. B. den erwarteten Durchsatz, die Echtzeit
+Fähigkeit, Zuverlässigkeits- oder Sicherheitseigenschaften.\\
+\\
+Neue Ansätze wie [3, 4] schlagen daher hybride Verfahren zur Einbettung von
+Anwendungen (engl. hybrid application mapping) vor. Im Fokus stehen Programme
+zur Bild- und Signalverarbeitung, die nach dem Starten Daten periodisch
+verarbeiten. Zur Entwurfszeit wird im Rahmen einer Entwurfsraumexploration analysiert, welchen Einfluss verschiedene Allokationen heterogener
+Ressourcen für die Programmausführung auf deren nichtfunktionale Eigenschaften
+haben. Die Exploration evaluiert und optimiert dabei eine Vielzahl solcher
+Implementierungsalternativen, wobei nur Alternativen beibehalten werden, die
+bezüglich ihrer Zielgrößen nicht durch andere dominiert werden (sog. Betrieb-
+spunkte [5]). Die Grundidee dieses Vorgehens ist, dass die ermittelten nichtfunktionalen
+Eigenschaften einer Programmausführung garantiert werden können,
+wenn die geforderten Ressourcen zur Laufzeit bereitgestellt werden. Hierbei
+müssen nach [4] bestimmte Nebenbedingungen (Constraints) eingehalten werden:
+Einerseits sind dies Bindungsanforderungen bezüglich der Ressourcentypen,
+auf die die Anwendungstasks gebunden werden können. Andererseits bestehen
+Routinganforderungen für die Realisierung der Datenabhängigkeiten zwischen
+Anwendungstasks, z. B. bezüglich der maximalen Anzahl an Sprüngen (engl.
+hops) durch das NoC oder der benötigten Bandbreite.
