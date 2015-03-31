@@ -92,4 +92,6 @@ Mit der Funktion numberOfFailingConstraints in der Klasse Task kann man herausfi
 Die Überprüfung der Routinganforderungen funktionieren nach dem gleichen Schemata.
 
 \subsection{Zuordnen  von Anforderungen}
-Wenn man die Funktion mapConstraints in der Klasse Task aufruft, werden alle für alle Listenelemente die Funktion map aufgerufen. Diese rufen, die Funktion update vom dazugehörigen Attribut auf. Dadurch wird die Objektvariable des Attributs aktualisiert.
+Wenn man die Funktion mapConstraints in der Klasse Task aufruft, werden alle für alle Listenelemente die Funktion map aufgerufen. Diese rufen, die Funktion update mit dem Übergabewert der Objektvariable des Listenelements vom dazugehörigen Attribut auf. Dadurch wird die Objektvariable des Attributs aktualisiert.\\
+\\
+Wenn man wieder die Anforderungen entziehen möchte, ruft man unmapConstraints auf. In dieser Funktion rufen alle Listenelemente unmap auf. Unmap ruft die Funktion update  des dazugehörigen Attriubtes auf. Diesmal ist der Übergabewert die negierte Objektvariable des Listenelements.
