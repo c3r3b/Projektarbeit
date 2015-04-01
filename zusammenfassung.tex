@@ -1,17 +1,19 @@
 \chapter{Zusammenfassung}\label{zusammenfassung}
 
-In dieser Arbeit wurde das Problem der Selbsteinbettung von Taskgraphen bei Manycore-Architekturen beschrieben und in ein Constraint-Satisfaction-Problem umgewandelt. \\ 
-Weiterhin wurden das Backtracking-Verfahren (systematisches Verfahren) sowie das Min-Conflicts-Verfahren (stochastisches Verfahren) als zwei mögliche Varianten von CSP-Solvern näher erläutert und auf die Problemspezifikation angewandt. \\
-Als Mechanismus zum Löschen inkonsistenter Werte wurde Forward-Checking im Min-Conflicts-und Backtracking-Algorithmus verwendet. \\
-Variablenordnungen tragen in systematischen Verfahren dazu bei, die Anzahl der Einbettungen zu verringern. Es wurden daher drei verschiedene Arten von Variablenordnungen näher betrachtet. \\
-Abschließend wurden verschiedene Varianten anhand der Anzahl der Einbettungen miteinander verglichen. \\ 
-\\
-Im Rahmen dieser Arbeit konnte gezeigt werden, dass Forward-Checking maßgeblich dazu beiträgt, die Anzahl der Einplanungen zu verringern. 
-Es konnte festgestellt werden, dass eine Verwendung von Backtracking ohne Forward-Checking nicht sinnvoll ist.\\
-Bei den Variablenordnungen hat Minimal-Bandwidth-Ordering die geringste Zahl an Einplanungen benötigt. Die hohe Berechnungsdauer von $\mathcal O(n^k)$ macht diese Variablenordnung für die praktische Anwendung unbrauchbar, wohingegen sich Minimal-Width-Ordering als guter Kompromiss zwischen Berechnungsaufwand und Anzahl an Einplanungen gezeigt hat. Die MaxHops-Variablenordnung benötigte eine deutlich höhere Anzahl an Einplanungen.
+In dieser Projektarbeit wurde gezeigt, wie es möglich ist, Anwendungen mit Bindungs- und Routinganforderungen in einem Mehrprozessorsystem einzubetten.Ferne wurde ein stochastischer Ansatz - der Min-Conflicts-Embedder - zum Lösen der Bindungs- und Routinganforderungen vorgestellt und dessen Implementierung dargelegt.
 
-In dieser Arbeit wurden die drei genannten Variablenordnungen jeweils statisch vor der Einplanungsphase berechnet. Eine andere, in dieser Arbeit nicht untersuchte Möglichkeit ist es, die nächste Variable erst in der Einplanungsphase dynamisch zu bestimmen. Minimum-Remaining-Values (MRV) \cite{artificialIntelligence},  auch unter dem Namen Fail-First-Principle (FFP) \cite{foundationCSP} bekannt, kann dazu verwendet werden. In auf dieser Arbeit aufbauenden Untersuchungen ist zu prüfen, ob der erhöhte Rechenaufwand in der dynamischen Einplanungsphase durch eine Verringerung der Einplanung gerechtfertigt ist. 
-
-Das Min-Conflicts Verfahren hat sich aufgrund abnehmender Erfolgswahrscheinlichkeiten als unbrauchbar für die praktische Anwendung erwiesen. Das Backtracking-Verfahren, welches in diesen Untersuchungen deutlich besser abgeschnitten hat, sollte weiterentwickelt werden. So könnte der Suchraum durch das Ausnutzen von Symmetrien\cite{Symmetrie} weiter eingeschränkt werden. 
-
+%In dieser Arbeit wurde das Problem der Selbsteinbettung von Taskgraphen bei Manycore-Architekturen beschrieben und in ein Constraint-Satisfaction-Problem umgewandelt. \\ 
+%Weiterhin wurden das Backtracking-Verfahren (systematisches Verfahren) sowie das Min-Conflicts-Verfahren (stochastisches Verfahren) als zwei mögliche Varianten von CSP-Solvern näher erläutert und auf die Problemspezifikation angewandt. \\
+%Als Mechanismus zum Löschen inkonsistenter Werte wurde Forward-Checking im Min-Conflicts-und Backtracking-Algorithmus verwendet. \\
+%Variablenordnungen tragen in systematischen Verfahren dazu bei, die Anzahl der Einbettungen zu verringern. Es wurden daher drei verschiedene Arten von Variablenordnungen näher betrachtet. \\
+%Abschließend wurden verschiedene Varianten anhand der Anzahl der Einbettungen miteinander verglichen. \\ 
+%\\
+%Im Rahmen dieser Arbeit konnte gezeigt werden, dass Forward-Checking maßgeblich dazu beiträgt, die Anzahl der Einplanungen zu verringern. 
+%Es konnte festgestellt werden, dass eine Verwendung von Backtracking ohne Forward-Checking nicht sinnvoll ist.\\
+%Bei den Variablenordnungen hat Minimal-Bandwidth-Ordering die geringste Zahl an Einplanungen benötigt. Die hohe Berechnungsdauer von $\mathcal O(n^k)$ macht diese Variablenordnung für die praktische Anwendung unbrauchbar, wohingegen sich Minimal-Width-Ordering als guter Kompromiss zwischen Berechnungsaufwand und Anzahl an Einplanungen gezeigt hat. Die MaxHops-Variablenordnung benötigte eine deutlich höhere Anzahl an Einplanungen.
+%
+%In dieser Arbeit wurden die drei genannten Variablenordnungen jeweils statisch vor der Einplanungsphase berechnet. Eine andere, in dieser Arbeit nicht untersuchte Möglichkeit ist es, die nächste Variable erst in der Einplanungsphase dynamisch zu bestimmen. Minimum-Remaining-Values (MRV) \cite{artificialIntelligence},  auch unter dem Namen Fail-First-Principle (FFP) \cite{foundationCSP} bekannt, kann dazu verwendet werden. In auf dieser Arbeit aufbauenden Untersuchungen ist zu prüfen, ob der erhöhte Rechenaufwand in der dynamischen Einplanungsphase durch eine Verringerung der Einplanung gerechtfertigt ist. 
+%
+%Das Min-Conflicts Verfahren hat sich aufgrund abnehmender Erfolgswahrscheinlichkeiten als unbrauchbar für die praktische Anwendung erwiesen. Das Backtracking-Verfahren, welches in diesen Untersuchungen deutlich besser abgeschnitten hat, sollte weiterentwickelt werden. So könnte der Suchraum durch das Ausnutzen von Symmetrien\cite{Symmetrie} weiter eingeschränkt werden. 
+%
 
