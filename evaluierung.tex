@@ -61,6 +61,86 @@ Es werden zwei Arten von Taskgraphen näher untersucht. Zum einen ein sequentiel
 \section{Auswertung} \label{Auswertung} 
 
 
+
+
+\begin{figure}
+\centering
+        \begin{tikzpicture}
+         \pgfplotsset{every axis legend/.append style={at={(0.5,-0.18)}, anchor=north}}
+                \begin{axis}[xmin=0,ymin=0,
+                xlabel={Anzahl an Tasks},
+                ylabel={Zeit in [ms]},
+                width=1.0\textwidth,
+      height=0.6\textwidth]
+%                \addplot [domain=0:80, samples=60]{1750.763223011357};
+                        \addplot coordinates {
+                        (0, 0)
+                        (3, 29.628)
+                        (5, 155.8845)
+                        (7, 430.3)
+                        (9, 732.4)
+                       (11, 2747.662)
+};
+
+                        \addplot coordinates {
+                        (0, 0)
+                         (3, 29.628)
+                        (5, 151.2)
+                        (7, 237.3)
+                        (9, 707.2)
+                       (11, 1313.9)
+};
+
+         \legend{paralleler Taskgraph, sequentieller Taskgraph}
+                \end{axis}
+        \end{tikzpicture}
+\caption{Vergleich der unterschiedlichen Terminierungsverfahren an einem Beispiel
+geringerer Komplexität als in Beispiel \ref{Terminierungsverfahren2}}
+\label{Terminierungsverfahren1}
+\end{figure}  
+
+
+
+
+
+\begin{figure}
+\centering
+        \begin{tikzpicture}
+         \pgfplotsset{every axis legend/.append style={at={(0.5,-0.18)}, anchor=north}}
+                \begin{axis}[xmin=0,ymin=0,
+                xlabel={Anzahl an Tasks},
+                ylabel={Anzahl an Instruktionen / Zeit [MIPS]},
+                width=1.0\textwidth,
+      height=0.6\textwidth]
+%                \addplot [domain=0:80, samples=60]{1750.763223011357};
+                        \addplot coordinates {
+                        (0, 0)
+                        (3, 813)
+                        (5, 1706)
+                        (7, 1599)
+                        (9, 1681)
+                       (11, 1519)
+};
+
+                        \addplot coordinates {
+                        (0, 0)
+                         (3, 813)
+                        (5, 1403)
+                        (7, 1377)
+                        (9, 1349)
+                       (11, 1292)
+};
+
+        \legend{paralleler Taskgraph, sequentieller Taskgraph}
+                \end{axis}
+        \end{tikzpicture}
+\caption{Vergleich der unterschiedlichen Terminierungsverfahren an einem Beispiel
+geringerer Komplexität als in Beispiel \ref{Terminierungsverfahren2}}
+\label{Terminierungsverfahren1}
+\end{figure}  
+
+
+
 %\begin{itemize}
 %%\begin{tabular}{ll}
 %
