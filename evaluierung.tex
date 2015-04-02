@@ -24,7 +24,7 @@ Die Workload einer jeden Kachel beträgt 100.
 \item LinkAttribute
 \begin{itemize}
 \item LinkBandwithAttribute\\
-Die Bandbreite eines jeden Links beträgt 10.
+Die maximale Bandbreite eines jeden Links beträgt 10.
 \end{itemize}
 \end{itemize}
 
@@ -40,7 +40,7 @@ Jeder Task benötigt eine Nutzlast von 100.
 \item CommunicationConstraint
 \begin{itemize}
 \item BandwidthConstraint\\
-Jede Communication benötigt eine Bandbreite von 5.
+Jede Communication benötigt eine Bandbreite von 2.
 \item MaxHopConstraint\\
 Die maximale Distanz zwischen zwei miteinander kommunizierenden Tasks beträgt immer 3.
 \end{itemize}
@@ -72,22 +72,30 @@ Es werden zwei Arten von Taskgraphen näher untersucht. Zum einen ein sequentiel
                 ylabel={Zeit in [ms]},
                 width=1.0\textwidth,
       height=0.6\textwidth]
-%                \addplot [domain=0:80, samples=60]{1750.763223011357};
+          %      \addplot [domain=0:80, samples=60]{1750.763223011357};
                         \addplot coordinates {
                         (0, 0)
                         (3, 29.628)
+                        (4, 81.35)
                         (5, 155.8845)
+                        (6, 134.531)
                         (7, 430.3)
+                        (8, 262.205)
                         (9, 732.4)
+                        (10, 1061.243)
                        (11, 2747.662)
 };
 
                         \addplot coordinates {
                         (0, 0)
                          (3, 29.628)
+                         (4, 43.2675)
                         (5, 151.2)
+                        (6, 208.794)
                         (7, 237.3)
+                        (8, 483.9455)
                         (9, 707.2)
+                        (10, 601.821)
                        (11, 1313.9)
 };
 
@@ -116,18 +124,26 @@ geringerer Komplexität als in Beispiel \ref{Terminierungsverfahren2}}
                         \addplot coordinates {
                         (0, 0)
                         (3, 813)
+                        (4, 1416)
                         (5, 1706)
+                        (6, 1583)
                         (7, 1599)
+                        (8, 1934)
                         (9, 1681)
+                        (10, 1752)
                        (11, 1519)
 };
 
                         \addplot coordinates {
                         (0, 0)
                          (3, 813)
+                         (4, 1091)
                         (5, 1403)
+                        (6, 1330)
                         (7, 1377)
+                        (8, 1299)
                         (9, 1349)
+                        (10, 1339)
                        (11, 1292)
 };
 
