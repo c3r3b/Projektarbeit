@@ -7,8 +7,7 @@ unterstützt Anwendungsszenarien, in denen eine sehr große Zahl an Programmen
 dynamisch starten und terminieren. Allerdings führt der Einsatz von
 immer mehr gemeinsam genutzten, heterogenen Hardwareressourcen dazu, dass
 die Vorhersagbarkeit nichtfunktionaler Eigenschaften der Ausführung eines Programms
-erschwert wird. Dies betrifft z. B. den erwarteten Durchsatz, die Echtzeit
-Fähigkeit, Zuverlässigkeits- oder Sicherheitseigenschaften.\\
+erschwert wird. Dies betrifft z. B. den erwarteten Durchsatz, die Echtzeit-Fähigkeit, Zuverlässigkeits- oder Sicherheitseigenschaften.\\
 \\
 Neue Ansätze wie \cite{reconfigurableArchtictures} \cite{daarm} schlagen daher hybride Verfahren zur Einbettung von
 Anwendungen (engl. \textit{hybrid application mapping}) vor. Im Fokus stehen Programme
@@ -17,8 +16,7 @@ verarbeiten. Zur Entwurfszeit wird im Rahmen einer \textit{Entwurfsraumexplorati
 Ressourcen für die Programmausführung auf deren nichtfunktionale Eigenschaften
 haben. Die Exploration evaluiert und optimiert dabei eine Vielzahl solcher
 Implementierungsalternativen, wobei nur Alternativen beibehalten werden, die
-bezüglich ihrer Zielgrößen nicht durch andere dominiert werden (sog. \textit{Betrieb-
-spunkte} \cite{runTimeManagement}. Die Grundidee dieses Vorgehens ist, dass die ermittelten nichtfunktionalen
+bezüglich ihrer Zielgrößen nicht durch andere dominiert werden (sog. \textit{Betriebspunkte} \cite{runTimeManagement}. Die Grundidee dieses Vorgehens ist, dass die ermittelten nichtfunktionalen
 Eigenschaften einer Programmausführung garantiert werden können,
 wenn die geforderten Ressourcen zur Laufzeit bereitgestellt werden. Hierbei
 müssen nach \cite{daarm}  bestimmte Nebenbedingungen (\textit{Constraints}) eingehalten werden:
@@ -26,4 +24,6 @@ Einerseits sind dies \textit{Bindungsanforderungen} bezüglich der Ressourcentyp
 auf die die Anwendungstasks gebunden werden können. Andererseits bestehen
 \textit{Routinganforderungen} für die Realisierung der Datenabhängigkeiten zwischen
 Anwendungstasks, z. B. bezüglich der maximalen Anzahl an Sprüngen (engl.
-\textit{hops}) durch das NoC oder der benötigten Bandbreite.
+\textit{hops}) durch das NoC oder der benötigten Bandbreite.\\
+\\
+\todo{Hier fehlt noch ein Absatz: worum geht es in diesem Vortrag? }

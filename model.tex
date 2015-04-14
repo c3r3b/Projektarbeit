@@ -1,17 +1,8 @@
 \chapter{Model zur Lösung des CSP-Problems}\label{model}
 
-In diesem Kapitel wird zuerst die Implementierung des Min-Conflicts-Embedder (Abschnitt \ref{minConflictImpl}) mit seinen einzelnen Methoden vorgestellt. Anschließend werden anhand von Klassendiagrammen die Bindungs- (Abschnitt \ref{bindunganforderung}) und Routinganforderungen (Abschnitt \ref{routinganforderung}) näher betrachtet. Dabei wird die innere Struktur erläutert, die diese Anforderungen hinzufügen, testen und lösen.
-\section{Implementierung des Min-Conflicts-Embedder}\label{minConflictImpl}
+In diesem Kapitel werden anhand von Klassendiagrammen die Bindungs- (Abschnitt \ref{bindunganforderung}) und Routinganforderungen (Abschnitt \ref{routinganforderung}) näher betrachtet. Dabei wird die innere Struktur erläutert, die diese Anforderungen hinzufügen, testen und lösen. Anschließend wird die Implementierung des Min-Conflicts-Embedder (Abschnitt \ref{minConflictImpl}) mit seinen einzelnen Methoden vorgestellt.
 
-Die Implementierung des Min-Conflicts-Embedder ist anhand des Aktivitätsdiagramm (Abbildung \ref{fig:minConflictsAkti}) graphisch dargestellt. Zuerst wird die Schleifenvariable \textit{j} der äußeren Schleife mit Null initialisiert und die Methode \textbf{mapTaskRandomly} aufgerufen. In \textbf{mapTaskRandomly} werden alle Tasks einer zufällig gewählten Kachel, die im Programmcode \textit{Unit} genannt wird, zugewiesen. Es werden dabei Verletzungen der Constraints ignoriert. Anschließend wird der inneren Schleifenvariable \textit{k} dem Wert Null zugewiesen und die Funktion \textbf{findRandomConflictingTask} aufgerufen. Diese Funktion wählt einen Task aus der Menge C der Tasks aus, die mindestens einen Constraint verletzen. Falls es keinen Task gibt (\textit{conflictingTask==null}) und somit die Menge \textit{C} leer ist, wurde eine Lösung gefunden (\textbf{success}). Ansonsten wird überprüft, ob die maximale Anzahl an Schleifendurchgängen (\textit{kMax}) erreicht wurde. Wenn dies nicht der Fall ist, ruft das Programm die Funktion \textbf{minConflicts} auf. \textbf{minConflicts} bekommt als Parameter den \textit{conflictingTask} übergeben und versucht für ihn eine geeignete Kachel zu finden, die zu möglichst wenigen Verletzungen einer Bindungs- bzw Routingbedingung führt. Falls es eine derartige Kachel nicht gibt, wird schrittweise der \textit{MaxHopConstraint} gelockert. Das heißt, dass die Manhatten-Distanz schrittweise um eins erhöht wird, bis der Algorithmus eine geeignete Kachel gefunden hat. Ist dies der Fall, wird k inkrementiert und die Funktion \textbf{findRandomConflictingTask} wiederum aufgerufen. \\
-Hat \textit{k} den Wert \textit{kMax} erreicht, so ist der Durchgang beendet und alle Tasks werden ihrer Kachel entzogen (\textbf{unmapTasks}). Die Funktion \textbf{mapTaskRandomly} wird aufgerufen und ein neuer Durchgang beginnt. Falls nach \textit{jMax} Durchgängen noch keine Lösung gefunden wurde, beendet sich das Programm (\textbf{fail}).
-
-\begin{figure}[H]\centering
-  \includegraphics[width = 150mm]{bilder/minAkti.jpg}
-  \caption{Das Aktivitätsdiagramm zur Min-Conflicts-Implementierung}\label{fig:minConflictsAkti}
-\end{figure}
 \section{Klassendiagramm zum Lösen der Bindungs- und Routinganforderungen}
-
 
 \subsection{Bindungsanforderungen}\label{bindunganforderung}
 
@@ -95,3 +86,16 @@ Die Überprüfung der Routinganforderungen funktionieren nach dem gleichen Schem
 Wenn man die Funktion mapConstraints in der Klasse \textit{Task} aufruft, werden alle für alle Listenelemente die Funktion \textit{map} aufgerufen. Diese rufen, die Funktion \textit{update} mit dem Übergabewert der Objektvariable des Listenelements vom dazugehörigen Attribut auf. Dadurch wird die Objektvariable des Attributs aktualisiert.\\
 \\
 Wenn man wieder die Anforderungen entziehen möchte, ruft man \textit{unmapConstraints} auf. In dieser Funktion rufen alle Listenelemente \textit{unmap} auf. \textit{Unmap} ruft die Funktion \textit{update} des dazugehörigen Attributes auf. Diesmal ist der Übergabewert die negierte Objektvariable des Listenelements.
+
+
+
+\section{Implementierung des Min-Conflicts-Embedder}\label{minConflictImpl}
+
+Die Implementierung des Min-Conflicts-Embedder ist anhand des Aktivitätsdiagramm (Abbildung \ref{fig:minConflictsAkti}) graphisch dargestellt. Zuerst wird die Schleifenvariable \textit{j} der äußeren Schleife mit Null initialisiert und die Methode \textbf{mapTaskRandomly} aufgerufen. In \textbf{mapTaskRandomly} werden alle Tasks einer zufällig gewählten Kachel, die im Programmcode \textit{Unit} genannt wird, zugewiesen. Es werden dabei Verletzungen der Constraints ignoriert. Anschließend wird der inneren Schleifenvariable \textit{k} dem Wert Null zugewiesen und die Funktion \textbf{findRandomConflictingTask} aufgerufen. Diese Funktion wählt einen Task aus der Menge C der Tasks aus, die mindestens einen Constraint verletzen. Falls es keinen Task gibt (\textit{conflictingTask==null}) und somit die Menge \textit{C} leer ist, wurde eine Lösung gefunden (\textbf{success}). Ansonsten wird überprüft, ob die maximale Anzahl an Schleifendurchgängen (\textit{kMax}) erreicht wurde. Wenn dies nicht der Fall ist, ruft das Programm die Funktion \textbf{minConflicts} auf. \textbf{minConflicts} bekommt als Parameter den \textit{conflictingTask} übergeben und versucht für ihn eine geeignete Kachel zu finden, die zu möglichst wenigen Verletzungen einer Bindungs- bzw Routingbedingung führt. Falls es eine derartige Kachel nicht gibt, wird schrittweise der \textit{MaxHopConstraint} gelockert. Das heißt, dass die Manhatten-Distanz schrittweise um eins erhöht wird, bis der Algorithmus eine geeignete Kachel gefunden hat. Ist dies der Fall, wird k inkrementiert und die Funktion \textbf{findRandomConflictingTask} wiederum aufgerufen. \\
+\\
+Hat \textit{k} den Wert \textit{kMax} erreicht, so ist der Durchgang beendet und alle Tasks werden ihrer Kachel entzogen (\textbf{unmapTasks}). Die Funktion \textbf{mapTaskRandomly} wird aufgerufen und ein neuer Durchgang beginnt. Falls nach \textit{jMax} Durchgängen noch keine Lösung gefunden wurde, beendet sich das Programm (\textbf{fail}).
+
+\begin{figure}[H]\centering
+  \includegraphics[width = 150mm]{bilder/minAkti.jpg}
+  \caption{Das Aktivitätsdiagramm zur Min-Conflicts-Implementierung}\label{fig:minConflictsAkti}
+\end{figure}
