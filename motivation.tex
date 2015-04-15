@@ -26,4 +26,8 @@ auf die die Anwendungstasks gebunden werden können. Andererseits bestehen
 Anwendungstasks, z. B. bezüglich der maximalen Anzahl an Sprüngen (engl.
 \textit{hops}) durch das NoC oder der benötigten Bandbreite.\\
 \\
-\todo{Hier fehlt noch ein Absatz: worum geht es in diesem Vortrag? }
+%\todo{Hier fehlt noch ein Absatz: worum geht es in diesem Vortrag? }
+Ziel dieser Projektarbeit ist es, einen Laufzeitmechanismus für hybride
+Einbettungsverfahren in heterogenen, NoC-basierten Mehrprozessorsystemen
+umzusetzen. So wird im Kapitel \ref{problemspezifikation} wird das Problem der Selbsteinbettung von \textit{Taskgraphen} auf Mehrprozessor-
+Architekturen modelliert und auf ein \textit{Constraint Satisfaction Problem} (CSP) abgebildet. Außerdem wird ein heuristischer \textit{CSP-Solver} - \textit{MinConflicts-Embedder} - beschrieben. Kapitel \ref{model} stellt die Implementierung zum Lösen von Anforderungen und die konkrete Implementierung des \textit{Min-Conflicts-Embedders} vor. Abschließend erfolgt in Kapitel \ref{evaluierung} eine Evaluierung mithilfe des \textit{InvadeSIM} -- Simulators \cite{cf:MPSoCs} von zwei verschiedenen Taskgraphtypen. Dies ist zum einen der \textit{sequentielle} und zum anderen der \textit{parallele} Taskgraph.

@@ -10,13 +10,13 @@ Mehrprozessorsysteme erlauben die Verteilung der Aufträge auf mehrere physische
 
 \ \\
 Bei der betrachteten Architektur (Abbildung ~\ref{fig:nocbild}) handelt es sich um ein heterogenes Mehrprozessorsystem. Kennzeichnend dafür ist die Verwendung verschiedener Typen von Zentralprozessoren. Diese werden im Weiteren Kacheln genannt. Die einzelnen Kacheln sind in einem Netzwerk -- einem sogenannten Network-on-Chip (NoC) \cite{mappingNocArchitectures} \cite{NOC} -- miteinander verbunden. Das Netzwerk ist zu einem regelmäßigen rechteckigen Gitter von Kacheln geordnet, welches N hoch und M breit ist. Die direktbenachbarten Kacheln sind mit gerichteten Links  $l_i \in L$ (Abbildung ~\ref{fig:links}) in beide Richtungen verbunden. Die Kacheln k $\in$ K sind durch die Koordinaten (x,y) definiert:
-%\begin{equation} 
-% \forall k \in K: k = \{(x, y) | 0 \leq x < N , 0 \leq y < M \}
-%\label{kacheln}
-%\end{equation}
+\begin{equation} 
+ \forall k \in K: k = \{(x, y) | 0 \leq x < N , 0 \leq y < M \}
+\label{kacheln}
+\end{equation}
 %\todo{keine einfärbung und sowas}
 
-Eine Kachel kann einen Task ausführen, wenn alle Constraints erfüllt sind. Einer dieser Randbedingungen ist der Max-Hop-Constraint. Diese besagt, dass zwei miteinander agierenden Task eine Manhattan-Distanz  $d_m$ (Formel \ref{formel2}) nicht überschreiten dürfen. 
+Eine Kachel kann einen Task ausführen, wenn alle Constraints erfüllt sind. Einer dieser Randbedingungen ist der Max-Hop-Constraint. Diese besagt, dass zwei miteinander agierende Tasks eine Manhattan-Distanz  $d_m$ (Formel \ref{formel2}) nicht überschreiten dürfen. 
 %Um zu kennzeichnen, dass eine Kachel einen Task ausführt, wird die Kachel eingefärbt. Es kann aber auch vorkommen, dass eine Kachel während des Betriebs fehlerhaft wird. Diese defekte Kachel sind mit der Farbe rot markiert. Der Abstand zwischen zwei Kacheln $k_1$ und $k_2$ berechnet sich mit Hilfe der Manhattandistanz  $d_m$.
 \begin{equation}
 d_m (k_1,k_2) = \mid k_1.x - k_2.x \mid + \mid k_1.y - k_2.y \mid 
@@ -25,7 +25,7 @@ d_m (k_1,k_2) = \mid k_1.x - k_2.x \mid + \mid k_1.y - k_2.y \mid
 
 \begin{figure}[H]\centering
 \includegraphics[width = 70mm]{bilder/NoC.jpg}
-\caption{Simulation eines heterogenes Network-On-Chip: Die belegten Kacheln sind mit grün und die defekten Kacheln mit rot markiert. In jeder Kachel steht der Ressourcentyp (im Beipsiel 0 oder 1).}\label{fig:nocbild}
+\caption{Simulation eines heterogenes Network-On-Chip: Die belegten Kacheln sind mit grün und die defekten Kacheln mit rot markiert. In jeder Kachel steht der Ressourcentyp (im Beispiel 0 oder 1).}\label{fig:nocbild}
 \end{figure}
 
 \begin{figure}[H]\centering
@@ -33,7 +33,7 @@ d_m (k_1,k_2) = \mid k_1.x - k_2.x \mid + \mid k_1.y - k_2.y \mid
   \caption{Die benachbarten Kacheln sind mit gerichteten Links in beide Richtungen verbunden.}\label{fig:links}
 \end{figure}
 \ \\
-Jede Anwendung, die aus mehreren Teilaufgaben, den sogenannten Tasks, besteht, besitzt einen Taskgraphen (Abbildung ~\ref{fig:taskgraph}). Dieser wird zur Entwurfszeit des Programms erstellt und stellt die Anforderungen, die für eine erfolgreiche Einbettung notwendig sind, graphisch dar.
+Jede Anwendung, die aus mehreren Teilaufgaben, den sogenannten Tasks, besteht, besitzt einen Taskgraphen (Abbildung ~\ref{fig:taskgraph}). Dieser wird zur Entwurfszeit des Programms angefertigt und stellt die Anforderungen, die für eine erfolgreiche Einbettung notwendig sind, graphisch dar.
 
  %Die konkreten Anforderungen werden im Kapitel \todo{korrekter Verweis} näher dargelegt. \\ \\
 %% die\texttt{
@@ -55,7 +55,7 @@ Eine Applikation besteht aus miteinander verbundenen Taskknoten $t \in T$ und Ko
 \item Taskknoten $t_i\in T$
 \begin{itemize}
 \item \textit{TypeConstraint}: \\
-Der Task benötigt einen bestimmten Kacheltyp
+Der Task benötigt einen bestimmten Ressourcentyp
 \item \textit{TaskWorkloadConstraint}: \\
 Der Task nimmt die  Kachel zu einem gewissen Prozentsatz in Anspruch
 \item \dots 
@@ -64,11 +64,11 @@ Der Task nimmt die  Kachel zu einem gewissen Prozentsatz in Anspruch
 \item Kommunikationsknoten $c_i \in C$:
 \begin{itemize}
 \item \textit{BandwidthConstraint}: \\
-Jede Kommunikation benötigt jeden Link auf der Route eine bestimmte freie Bandbreite
+Jede Kommunikation benötigt jeden Link auf der Route eine bestimmte Bandbreite
 %\item $c_i$.messageSize: Die Nachrichtengröße
 %\item $c_i$.period: Das Intervall, in dem die Nachrichten geschickt werden /todo{Abstand in dem die Nachrichten geschickt werden?}
 \item \textit{MaxHopConstraint}: \\
-Die Route der Kommunikation darf nicht länger als eine maximale Manhatten-Distanz sein
+Die Route der Kommunikation darf nicht länger als eine maximale Manhattan-Distanz sein
 %Maximale Manhattan-Distanz zwischen zwei Tasks, die mit einer Kommunikation in Verbindung stehen. 
 \item \dots
 \label{Kommunikationsknoten}
@@ -105,7 +105,7 @@ Die Route der Kommunikation darf nicht länger als eine maximale Manhatten-Dista
 %\end{itemize}
 %\end{itemize}
 \ \\
-Das Ziel des Algorithmus ist es, für jeden Task eine Kachel zu finden, so dass alle Anforderungen des Taskgraphen erfüllt sind. Ist dies nicht möglich, soll der Algorithmus sich beenden und einen Fehlschlag der Einbettung melden. Im Abschnitt \ref{minConflicts} (Implementierung in Abschnitt \ref{minConflictImpl}) wird mit dem Min-Conflicts-Embedder ein stochastischer Ansatz vorgestellt. Es gibt auch die Möglichkeit, die Problemstellung mit dem systematischen Ansatz zu lösen. Dies wird in der Quelle \cite{jaeger} näher erläutert.
+Das Ziel des Algorithmus ist es, für jeden Task eine Kachel zu finden, so dass alle Anforderungen des Taskgraphen erfüllt sind. Ist dies nicht möglich, soll der Algorithmus sich beenden und einen Fehlschlag der Einbettung melden. Im Abschnitt \ref{minConflicts} (Implementierung in Abschnitt \ref{minConflictImpl}) wird mit dem Min-Conflicts-Embedder ein heuristischer  Ansatz vorgestellt. Es gibt auch die Möglichkeit, die Problemstellung mit dem systematischen Ansatz zu lösen. Dies wird in der Quelle \cite{jaeger} näher erläutert.
 
 %\newpage
 
@@ -237,8 +237,8 @@ Das Problem der Taskeinbettung lässt sich als Constraint-Satisfaction-Problem (
 %\end{figure}
 
 \section{Min-Conflicts-Embedder}\label{minConflicts}
-Die Min--Conflicts--Heuristik ist in der Praxis eine häufig eingesetzte Methode zum Lösen von CSPs. Es handelt sich nicht um ein systematisches Verfahren wie beim Backtracking, sondern um ein Heuristisches. Als Startpunkt wird eine zufällige Belegung der Veriablen erzeugt. Falls dies keine Lösung des CSPs ist, wovon auszugehen ist, wird eine kon\-flikt\-er\-zeu\-gen\-de Variable zufällig ausgewählt. Dieser wird ein Wert zugewiesen, der möglichst wenige Randbedingungen verletzt.\\ \\
-Wie bei anderen stochastischen Methoden besteht auch hier die Gefahr, dass das System in einem lokalen Minimum \todo{lokales minimum bedeutet, dass eine bestimmte Anzahl von variablen konfliktbehaftet sind und diese Anzahl ein lokales minimum darstellt? }terminiert. Das bedeutet, dass keine weiteren Verbesserungen
+Die Min--Conflicts--Heuristik ist in der Praxis eine häufig eingesetzte Methode zum Lösen von CSPs. Es handelt sich nicht um ein systematisches Verfahren wie beim Backtracking, sondern um ein Heuristisches. Als Startpunkt wird eine zufällige Belegung der Variablen erzeugt. Falls dies keine Lösung des CSPs ist, wovon auszugehen ist, wird eine kon\-flikt\-er\-zeu\-gen\-de Variable zufällig ausgewählt. Dieser wird ein Wert zugewiesen, der möglichst wenige Randbedingungen verletzt.\\ \\
+Wie bei anderen stochastischen Methoden besteht auch hier die Gefahr, dass das System in einem lokalen Minimum terminiert. Das bedeutet, dass keine weiteren Verbesserungen
 erzielt werden können, eine Lösung für das CSP aber noch nicht gefunden
-wurde. Falls dies der Fall ist, muss eine erneute zufällige Belegung der Variablen erzeugt werden und eine neue Runde beginnt. Eine Tabu-Liste kann dabei helfen, Belegungen, die zu einem lokalen Minimum geführt haben, nicht mehr zu wählen. Nach einer vorher festgelegten Anzahl von Runden beendet sich die Heuristik und das Scheitern der Einplanung wird ausgegeben. So kann es vorkommen, dass die Min--Conflicts-Heuristik keine konsistente Lösung findet, obwohl es eine im Constraint--System gibt.\\ \\
+wurde. Falls dies der Fall ist, muss eine erneute zufällige Belegung der Variablen erzeugt werden und eine neue Runde beginnt. Eine Tabu-Liste kann dabei helfen, Belegungen, die zu einem lokalen Minimum geführt haben, nicht mehr zu wählen. Nach einer vorher festgelegten Anzahl von Runden beendet sich die Heuristik und das Scheitern der Einplanung wird ausgegeben. So kann es vorkommen, dass die Min--Conflicts-Heuristik keine konsistente Lösung findet, obwohl eine im Constraint--System vorhanden ist.\\ \\
 Oftmals wird die Heuristik verwendet, wenn sich das Constraint--System geringfügig verändert hat und für das vorherige System schon eine Lösung vorhanden ist. Aus diesem Grund wird der Algorithmus auch als "heuristisches Reparieren" \cite{cspsolvingRepairMethod} bezeichnet.\\ \\

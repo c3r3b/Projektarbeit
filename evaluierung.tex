@@ -1,7 +1,7 @@
 \chapter{Evaluierung}\label{evaluierung}
 
 \section{Implementierung} \label{Tests}
-Die Implementierung des Min-Conflicts-Embedders und der Automatismus zum Lösen von Bindungs- und Routinganforderungen wurden in der Programmiersprache X10 \cite{x10} geschrieben. Des Weiteren wurde das vom Lehrstuhl \grqq Hardware-Software-Co-Design\grqq (Universität Erlangen-Nürnberg) entwickelte CoNoC-Framework in diese parallele, objektorientierte Programmiersprache transformiert. Für die Testumgebung wurden zwei Arten von Taskgraphen erstellt und diese mithilfe des Simulators \textit{invadeSIM} \cite{invadeSIM}  ausgewertet.
+Die Implementierung des Min-Conflicts-Embedders und der Automatismus zum Lösen von Bindungs- und Routinganforderungen wurden in der Programmiersprache X10 \cite{x10} geschrieben. Des Weiteren wurde das vom Lehrstuhl \grqq Hardware-Software-Co-Design\grqq (Universität Erlangen-Nürnberg) entwickelte CoNoC-Framework in diese parallele, objektorientierte Programmiersprache transformiert und angepasst. Für die Testumgebung wurden zwei Arten von Taskgraphen erstellt und diese mithilfe des Simulators \textit{invadeSIM} \cite{invadeSIM}  ausgewertet.
 
 %Die Implementierung des CSP-Solver (Backtracking-Algorithmus [\ref{Backtracking}] und Min-Conflicts-Algorithmus [\ref{minConflicts}]) und der Variablenheuristiken (MWO [\ref{MWO}], MBO [\ref{MBO}], MaxHops [\ref{MaxHops}]) erfolgte in der Programmiersprache Java. Für die Simulation eines Network-On-Chips (NoC) wurde das vom Lehrstuhl \grqq Hardware-Software-Co-Design\grqq (Universität Erlangen-Nürnberg) entwickelte CoNoC-Framework verwendet. Die Taskgraphen wurden mit Hilfe des Programms \textit{Task Graphs for Free} \cite{tgff} erstellt.  \\
 %\\
@@ -37,6 +37,7 @@ Die Hälfte aller Tasks sind vom Ressourcentyp 0. Der Rest ist Ressourcentyp 1.
 \item \textit{TaskWorkloadConstraint} \\
 Jeder Task benötigt eine Nutzlast von 100.
 \end{itemize}
+\newpage
 \item \textit{CommunicationConstraint}
 \begin{itemize}
 \item \textit{BandwidthConstraint}\\
@@ -60,7 +61,7 @@ Es werden zwei Arten von Taskgraphen näher untersucht. Zum einen ein sequentiel
 
 \section{Auswertung} \label{Auswertung} 
 
-Abbildung \ref{einbettungszeit} legt die Zeit dar, die der Min-Conflicts-Embedder (Abschnitt \ref{minConflicts} und \ref{minConflictImpl}) benötigt, um sequentielle bzw. parellele Taskgraphen einzuplanen. Die Taskgraphen besitzen die Eigenschaften, die im Abschnitt \ref{Testumgebung1} vorgestellt wurden.Aus der Abbildung \ref{einbettungszeit} ist deutlich zu erkennen, dass beim parallelen Taskgraph  (im Vergleich zum sequentiellen Taskgraph) mit steigender Anzahl der Tasks die benötigte Zeit sich sprunghaft erhöht. So benötigt der Embedder bei einer niedrigen Taskanzahl  für beide Taskgraphtypen etwa die gleiche Zeit, doch etwa ab zehn Tasks divergieren die beiden Graphen. Das Schaubild \ref{mips} stellt den Verlauf der benötigten MIPS (engl. \textit{Million Instructions per Second}) graphisch dar. Aus diesem Diagramm geht hervor, dass der parallele Taskgraph mehr Instruktionen pro Sekunde als der Sequentielle benötigt. Die Graphik \ref{instruktionen} zeigt die Gesamtzahl der Instruktionen (Formel \ref{formelInstruktionen}).
+Abbildung \ref{einbettungszeit} legt dar,  wie viel Zeit der Min-Conflicts-Embedder (Abschnitt \ref{minConflicts} und \ref{minConflictImpl}) benötigt, um sequentielle bzw. parellele Taskgraphen einzuplanen. Die Taskgraphen besitzen die Eigenschaften, die im Abschnitt \ref{Testumgebung1} vorgestellt wurden. Aus der Abbildung \ref{einbettungszeit} ist deutlich zu erkennen, dass beim parallelen Taskgraph  (im Vergleich zum sequentiellen Taskgraph) mit steigender Anzahl der Tasks die benötigte Zeit sich sprunghaft erhöht. So benötigt der Embedder bei einer niedrigen Taskanzahl  für beide Taskgraphtypen etwa die gleiche Zeit, doch etwa ab zehn Tasks divergieren die beiden Graphen. Das Schaubild \ref{mips} stellt den Verlauf der benötigten MIPS (engl. \textit{Million Instructions per Second}) graphisch dar. Aus diesem Diagramm geht hervor, dass der parallele Taskgraph mehr Instruktionen pro Sekunde als der Sequentielle benötigt. Die Graphik \ref{instruktionen} stellt die Entwicklung der Gesamtzahl der Instruktionen (Formel \ref{formelInstruktionen}) dar.
 
 \begin{equation}
 Gesamtzahl der Instruktionen = MIPS * Zeit in Sekunden * 10^6
@@ -154,7 +155,7 @@ Die Schaubilder verdeutlichen, dass es sinnvoll ist, parallel einzubetten, da ma
         \legend{paralleler Taskgraph, sequentieller Taskgraph}
                 \end{axis}
         \end{tikzpicture}
-\caption{Anzahl der MIPS, die der Embedder benötigt}
+\caption{Anzahl der MIPS, die der Embedder benötigt.}
 \label{mips}
 \end{figure}  
 
