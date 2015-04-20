@@ -1,7 +1,7 @@
 \chapter{Evaluierung}\label{evaluierung}
 
 \section{Implementierung} \label{Tests}
-Die Implementierung des Min-Conflicts-Embedders und der Automatismus zum Lösen von Bindungs- und Routinganforderungen wurden in der Programmiersprache X10 \cite{x10} geschrieben. Des Weiteren wurde das vom Lehrstuhl \grqq Hardware-Software-Co-Design\grqq (Universität Erlangen-Nürnberg) entwickelte CoNoC-Framework in diese parallele, objektorientierte Programmiersprache transformiert und angepasst. Für die Testumgebung wurden zwei Arten von Taskgraphen erstellt und diese mithilfe des Simulators \textit{invadeSIM} \cite{invadeSIM}  ausgewertet.
+Die Implementierung des Min-Conflicts-Embedders und der Automatismus zum Lösen von Bindungs- und Routinganforderungen wurden in der PGAS-Programmiersprache X10 \cite{x10} \cite{pgas} geschrieben. Des Weiteren wurde das vom Lehrstuhl \grqq Hardware-Software-Co-Design\grqq  (Universität Erlangen-Nürnberg) entwickelte CoNoC-Framework in diese parallele, objektorientierte Programmiersprache transformiert und angepasst. Für die Testumgebung wurden zwei Arten von Taskgraphen erstellt und diese mithilfe des Simulators \textit{invadeSIM} \cite{invadeSIM}  ausgewertet.
 
 %Die Implementierung des CSP-Solver (Backtracking-Algorithmus [\ref{Backtracking}] und Min-Conflicts-Algorithmus [\ref{minConflicts}]) und der Variablenheuristiken (MWO [\ref{MWO}], MBO [\ref{MBO}], MaxHops [\ref{MaxHops}]) erfolgte in der Programmiersprache Java. Für die Simulation eines Network-On-Chips (NoC) wurde das vom Lehrstuhl \grqq Hardware-Software-Co-Design\grqq (Universität Erlangen-Nürnberg) entwickelte CoNoC-Framework verwendet. Die Taskgraphen wurden mit Hilfe des Programms \textit{Task Graphs for Free} \cite{tgff} erstellt.  \\
 %\\
@@ -47,7 +47,7 @@ Die maximale Distanz zwischen zwei miteinander kommunizierenden Tasks beträgt i
 \end{itemize}
 \end{itemize}
 
-Es werden zwei Arten von Taskgraphen näher untersucht. Zum einen ein sequentieller Taskgraph (Abbildung \ref{fig:seq}), bei dem jeder Task die gleiche Anzahl an Kommunikationen besitzt,  zum anderen ein paralleler Taskgraph (Abbildung \ref{fig:par}) bei dem mehrere Kommunikationen von einem Task ausgehen. Die Tasks, die die Kommunikation empfangen, können hierbei zeitgleich weiterarbeiten. Für beide Taskgrapharten werden Taskgraphen mit jeweils $n \in \{ 3, 4, 5, 6, 7, 8, 9, 10, 11\}$ Tasks erstellt.
+Es werden zwei Arten von Taskgraphen näher untersucht. Zum einen ein sequentieller Taskgraph (Abbildung \ref{fig:seq}), bei dem  in einem Zeitabschnitt nur ein Task arbeiten kann, zum anderen ein paralleler Taskgraph (Abbildung \ref{fig:par}), bei dem mehrere Tasks in einem Zeitabschnitt arbeiten können. Für beide Taskgrapharten werden Taskgraphen mit jeweils $n \in \{ 3, 4, 5, 6, 7, 8, 9, 10, 11\}$ Tasks erstellt.
 \begin{figure}[H]\centering
   \includegraphics[width = 120mm]{bilder/sequentiell.jpg}
   \caption{Sequentieller Taskgraph mit $n$ Tasks: Ein Kreis repräsentiert einen Task. Ein Rechteck stellt eine Kommunikation dar.
@@ -61,14 +61,14 @@ Es werden zwei Arten von Taskgraphen näher untersucht. Zum einen ein sequentiel
 
 \section{Auswertung} \label{Auswertung} 
 
-Abbildung \ref{einbettungszeit} legt dar,  wie viel Zeit der Min-Conflicts-Embedder (Abschnitt \ref{minConflicts} und \ref{minConflictImpl}) benötigt, um sequentielle bzw. parellele Taskgraphen einzuplanen. Die Taskgraphen besitzen die Eigenschaften, die im Abschnitt \ref{Testumgebung1} vorgestellt wurden. Aus der Abbildung \ref{einbettungszeit} ist deutlich zu erkennen, dass beim parallelen Taskgraph  (im Vergleich zum sequentiellen Taskgraph) mit steigender Anzahl der Tasks die benötigte Zeit sich sprunghaft erhöht. So benötigt der Embedder bei einer niedrigen Taskanzahl  für beide Taskgraphtypen etwa die gleiche Zeit, doch etwa ab zehn Tasks divergieren die beiden Graphen. Das Schaubild \ref{mips} stellt den Verlauf der benötigten MIPS (engl. \textit{Million Instructions per Second}) graphisch dar. Aus diesem Diagramm geht hervor, dass der parallele Taskgraph mehr Instruktionen pro Sekunde als der Sequentielle benötigt. Die Graphik \ref{instruktionen} stellt die Entwicklung der Gesamtzahl der Instruktionen (Formel \ref{formelInstruktionen}) dar.
+Abbildung \ref{einbettungszeit} legt dar,  wie viel Zeit der Min-Conflicts-Embedder (Abschnitt \ref{minConflicts} und \ref{minConflictImpl}) benötigt, um sequentielle bzw. parellele Taskgraphen einzuplanen. Die Taskgraphen besitzen die Eigenschaften, die im Abschnitt \ref{Testumgebung1} vorgestellt wurden. Aus der Abbildung \ref{einbettungszeit} ist deutlich zu erkennen, dass beim parallelen Taskgraph  (im Vergleich zum sequentiellen Taskgraph) mit steigender Anzahl der Tasks die benötigte Zeit sich sprunghaft erhöht. So benötigt der Embedder bei einer niedrigen Taskanzahl  für beide Taskgraphtypen etwa die gleiche Zeit, doch etwa ab zehn Tasks divergieren die beiden Graphen. Das Schaubild \ref{mips} stellt den Verlauf der benötigten MIPS (engl. \textit{Million Instructions per Second}) graphisch dar. Aus diesem Diagramm geht hervor, dass der parallele Taskgraph mehr Instruktionen pro Sekunde als der Sequentielle benötigt. Die Graphik \ref{instruktionen} veranschaulicht die Entwicklung der Gesamtzahl der Instruktionen (Formel \ref{formelInstruktionen}).
 
 \begin{equation}
 Gesamtzahl der Instruktionen = MIPS * Zeit in Sekunden * 10^6
 \label{formelInstruktionen}
 \end{equation}
 
-Die Schaubilder verdeutlichen, dass es sinnvoll ist, parallel einzubetten, da man bei parallelen Taskgraphen (siehe Abbildung \ref{fig:par}) $t_2$ bis $t_{n-1}$ simultan eine Lösung finden kann. Somit kann die benötigte Zeit verkürzt werden. Das Programm wurde mit der Sprache  X10 \cite{x10}  programmiert. Dies ist eine parallele, objektorientierte Programmiersprache, die speziell für high-end Hardware mit bis zu 10000 Hardware-Threads \cite{x10Spezi} , entwickelt wurde. So sollten die  kommenden Aufgaben für dieses Projekt sein, einen parallel agierende Embedder zu implementieren.
+Die Schaubilder verdeutlichen, dass es sinnvoll ist, parallel einzubetten, da man bei parallelen Taskgraphen (siehe Abbildung \ref{fig:par}) für die Tasks $t_2$ bis $t_{n-1}$ simultan eine Lösung finden kann. Somit kann die benötigte Zeit verkürzt werden. Das Programm wurde mit der Sprache  X10 \cite{x10}  programmiert. Dies ist eine parallele, objektorientierte Programmiersprache, die speziell für high-end Hardware mit bis zu 10.000 Hardware-Threads \cite{x10Spezi} , entwickelt wurde. So sollten die  kommenden Aufgaben für dieses Projekt sein, einen parallel agierende Embedder zu implementieren, der auf Basis eines Backtracking-Ansatzes \cite{jaeger} arbeitet.
 \begin{figure}
 \centering
         \begin{tikzpicture}

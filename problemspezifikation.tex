@@ -55,20 +55,20 @@ Eine Applikation besteht aus miteinander verbundenen Taskknoten $t \in T$ und Ko
 \item Taskknoten $t_i\in T$
 \begin{itemize}
 \item \textit{TypeConstraint}: \\
-Der Task benötigt einen bestimmten Ressourcentyp
+Der Task benötigt einen bestimmten Ressourcentyp.
 \item \textit{TaskWorkloadConstraint}: \\
-Der Task nimmt die  Kachel zu einem gewissen Prozentsatz in Anspruch
+Der Task nimmt die  Kachel zu einem gewissen Prozentsatz in Anspruch.
 \item \dots 
 \label{Taskknoten}
 \end{itemize}
 \item Kommunikationsknoten $c_i \in C$:
 \begin{itemize}
 \item \textit{BandwidthConstraint}: \\
-Jede Kommunikation benötigt jeden Link auf der Route eine bestimmte Bandbreite
+Jede Kommunikation benötigt jeden Link auf der Route eine bestimmte Bandbreite.
 %\item $c_i$.messageSize: Die Nachrichtengröße
 %\item $c_i$.period: Das Intervall, in dem die Nachrichten geschickt werden /todo{Abstand in dem die Nachrichten geschickt werden?}
 \item \textit{MaxHopConstraint}: \\
-Die Route der Kommunikation darf nicht länger als eine maximale Manhattan-Distanz sein
+Die Route der Kommunikation darf nicht länger als eine maximale Manhattan-Distanz sein.
 %Maximale Manhattan-Distanz zwischen zwei Tasks, die mit einer Kommunikation in Verbindung stehen. 
 \item \dots
 \label{Kommunikationsknoten}

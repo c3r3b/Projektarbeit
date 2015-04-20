@@ -6,13 +6,13 @@ In diesem Kapitel werden anhand von Klassendiagrammen die Bindungs- (Abschnitt \
 
 \subsection{Bindungsanforderungen}\label{bindunganforderung}
 
-Die Abbildung \ref{fig:klBind} zeigt das Klassendiagramm zum Lösen von Bindungsanforderungen. Die Klasse Task speichert in einer Liste alle Bindungsanforderungen (engl. \textit{TaskConstraint}) ab und stellt folgende Funktionen zur Verfügung:
+Die Abbildung \ref{fig:klBind} zeigt das Klassendiagramm zum Lösen von Bindungsanforderungen. Die Klasse Task speichert in einer Liste \textit{list} alle Bindungsanforderungen (engl. \textit{TaskConstraint}) ab und stellt folgende Funktionen zur Verfügung:
 
 \begin{itemize}
 \item \textit{addTaskConstraint}\\
-fügt ein Objekt einer abgeleiteten Klasse von \textit{TaskConstraint} der Liste hinzu. 
+fügt ein Objekt einer abgeleiteten Klasse von \textit{TaskConstraint} der Liste \textit{list} hinzu. 
 \item \textit{removeTaskConstraint}\\
-löscht ein Objekt vom Typ TaskConstraint aus der Liste.
+löscht ein Objekt vom Typ TaskConstraint aus der Liste \textit{list}.
 \item \textit{taskConstraintsAreSatisfied}\\
 ruft für alle Objekte in der Liste die Funktion \textit{isSatisfied} aus der Klasse \textit{TaskConstraint} auf. \textit{isSatisfied} überprüft, ob die jeweilige Bindungsanforderung erfüllt ist. Die Funktion gibt \textit{True} zurück, wenn alle Bindungsanforderungen erfüllt sind.%Es wird True zurückgegeben, wenn für alle Objektaufrufe
 \item \textit{numberOfFailingConstraint}\\
@@ -30,9 +30,9 @@ Um von der abstrakten Klasse \textit{TaskConstraint} zu erben, müssen diese abs
 \item \textit{isSatisfied}\\
 überprüft, ob der eingebettete Task die Anforderung erfüllt. Dazu wird die Methode \textit{check} der zugehörigen \textit{UnitAttribute}-Klasse mit dem Übergabewert \textit{Null} aufgerufen. 
 \item \textit{map} \\
-ruft bei der zugehörigen \textit{UnitAttribute}-Unterklasse die Methode \textit{update} auf. Der Parameterwert ist die eigene Objektvariable
+ruft bei der zugehörigen \textit{UnitAttribute}-Unterklasse die Methode \textit{update} auf. Der Parameterwert ist die eigene Objektvariable.
 \item \textit{}unmap\\
-ruft bei der zugehörigen \textit{UnitAttribute}-Unterklasse die Methode \textit{update} auf. Der Parameterwert ist der negierte Wert der eigenen Objektvariable
+ruft bei der zugehörigen \textit{UnitAttribute}-Unterklasse die Methode \textit{update} auf. Der Parameterwert ist der negierte Wert der eigenen Objektvariable.
 \end{itemize}
 
 Die Klasse \textit{Unit} repräsentiert eine Kachel auf dem Network-on-Chip. Jede Instanz ist durch die Positionsangabe \textit{(x,y)} eindeutig identifizierbar und besitzt eine Liste von Objekten der abgeleiteten Unterklassen der abstrakten Klasse \textit{UnitAttributes}. In der Klasse \textit{Unit} befinden sich folgende Methoden:
@@ -83,7 +83,7 @@ Mit der Funktion \textit{numberOfFailingConstraints} in der Klasse \textit{Task}
 Die Überprüfung der Routinganforderungen funktionieren nach dem gleichen Schemata.
 
 \subsection{Zuordnen  von Anforderungen}
-Wenn man die Funktion \textit{mapConstraints} in der Klasse \textit{Task} aufruft, werden für alle Listenelemente die Funktion \textit{map} ausgeführt. Diese rufen, die Funktion \textit{update} mit dem Übergabewert der Objektvariable des Listenelements vom dazugehörigen Attribut auf. Dadurch wird die Objektvariable des Attributs aktualisiert.\\
+Wenn man die Funktion \textit{mapConstraints} in der Klasse \textit{Task} oder \textit{Communication} aufruft, werden für alle Listenelemente die Funktion \textit{map} ausgeführt. Diese rufen, die Funktion \textit{update} mit dem Übergabewert der Objektvariable des Listenelements vom dazugehörigen Attribut auf. Dadurch wird die Objektvariable des Attributs aktualisiert.\\
 \\
 Sollen die Anforderungen wieder entzogen werden, ruft man \textit{unmapConstraints} auf. In dieser Funktion führen alle Listenelemente \textit{unmap} aus. \textit{Unmap} ruft die Funktion \textit{update} des dazugehörigen Attributes auf. Diesmal ist der Übergabewert die negierte Objektvariable des Listenelements.
 
@@ -91,7 +91,7 @@ Sollen die Anforderungen wieder entzogen werden, ruft man \textit{unmapConstrain
 
 \section{Implementierung des Min-Conflicts-Embedder}\label{minConflictImpl}
 
-Die Implementierung des Min-Conflicts-Embedder ist anhand des Aktivitätsdiagramm (Abbildung \ref{fig:minConflictsAkti}) graphisch dargestellt. Zuerst wird die Schleifenvariable \textit{j} der äußeren Schleife mit Null initialisiert und die Methode \textbf{mapTaskRandomly} aufgerufen. In \textbf{mapTaskRandomly} wird jedem Task eine zufällig gewählte Kachel, die im Programmcode \textit{Unit} genannt wird, zugeteilt. Es werden dabei Verletzungen der Constraints ignoriert. Anschließend wird der inneren Schleifenvariable \textit{k} dem Wert Null zugewiesen und die Funktion \textbf{findRandomConflictingTask} aufgerufen. Diese Funktion wählt einen Task aus der Menge \textit{C} der Tasks aus, die mindestens einen Constraint verletzen. Falls es keinen Task gibt (\textit{conflictingTask==null}) und somit die Menge \textit{C} leer ist, wurde eine Lösung gefunden (\textbf{success}). Ansonsten wird überprüft, ob die maximale Anzahl an Schleifendurchgängen (\textit{kMax}) erreicht wurde. Wenn dies nicht der Fall ist, ruft das Programm die Funktion \textbf{minConflicts} auf. \textbf{minConflicts} bekommt als Parameter den \textit{conflictingTask} übergeben und versucht für ihn eine geeignete Kachel zu finden, die zu möglichst wenigen Verletzungen einer Bindungs- bzw Routingbedingung führt. Falls es eine derartige Kachel nicht gibt, wird schrittweise der \textit{MaxHopConstraint} gelockert. Das heißt, dass die Manhattan-Distanz schrittweise um eins erhöht wird, bis der Algorithmus eine geeignete Kachel gefunden hat. Ist dies der Fall, wird k inkrementiert und die Funktion \textbf{findRandomConflictingTask} wiederum aufgerufen. \\
+Die Implementierung des Min-Conflicts-Embedder ist anhand eines  Aktivitätsdiagramm (Abbildung \ref{fig:minConflictsAkti}) graphisch dargestellt. Zuerst wird die Schleifenvariable \textit{j} der äußeren Schleife mit \textit{Null} initialisiert und die Methode \textbf{mapTaskRandomly} aufgerufen. In \textbf{mapTaskRandomly} wird jedem Task eine zufällig gewählte Kachel, die im Programmcode \textit{Unit} genannt wird, zugeteilt. Es werden dabei Verletzungen der Constraints ignoriert. Anschließend wird der inneren Schleifenvariable \textit{k} dem Wert \textit{Null} zugewiesen und die Funktion \textbf{findRandomConflictingTask} aufgerufen. Diese Funktion wählt einen Task aus der Menge \textit{C} der Tasks aus, die mindestens einen Constraint verletzen. Falls es keinen Task gibt (\textit{conflictingTask==null}) und somit die Menge \textit{C} leer ist, wurde eine Lösung gefunden (\textbf{success}). Ansonsten wird überprüft, ob die maximale Anzahl an Schleifendurchgängen (\textit{kMax}) erreicht wurde. Wenn dies nicht der Fall ist, ruft das Programm die Funktion \textbf{minConflicts} auf. \textbf{minConflicts} bekommt als Parameter den \textit{conflictingTask} übergeben und versucht für ihn eine geeignete Kachel zu finden, die zu möglichst wenigen Verletzungen einer Bindungs- bzw Routingbedingung führt. Falls es eine derartige Kachel nicht gibt, wird schrittweise der \textit{MaxHopConstraint} gelockert. Das heißt, dass die maximale Manhattan-Distanz aller Kommunikationsknoten schrittweise um eins erhöht wird, bis der Algorithmus eine geeignete Kachel gefunden hat. Ist dies der Fall, wird \textit{k} inkrementiert und die Funktion \textbf{findRandomConflictingTask} wiederum aufgerufen. \\
 \\
 Hat \textit{k} den Wert \textit{kMax} erreicht, so ist der Durchgang beendet und alle Tasks werden ihrer Kachel entzogen (\textbf{unmapTasks}). Die Funktion \textbf{mapTaskRandomly} wird aufgerufen und ein neuer Durchgang beginnt. Falls nach \textit{jMax} Durchgängen noch keine Lösung gefunden wurde, beendet sich das Programm (\textbf{fail}).
 
